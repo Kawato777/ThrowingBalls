@@ -1,6 +1,15 @@
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+
+Assets/Unity.VisualScripting.Generated.meta
+Assets/Unity.VisualScripting.Generated/VisualScripting.Flow.meta
+/**/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+/**/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+Assets/Unity.VisualScripting.Generated/VisualScripting.Core.meta
+/**/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+/**/[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
+
 #
 /[Ll]ibrary/
 /[Tt]emp/
