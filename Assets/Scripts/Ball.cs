@@ -17,6 +17,10 @@ public class Ball : MonoBehaviour
     {
         startPoint = transform.position;
 
+        // 射出速度を求める
+        // float launchVelocity = Mathf.Sqrt(Mathf.Abs(horizontalDistance * Physics.gravity.y) / Mathf.Sin(2f * launchAngleRad));
+        float launchVelocity = 3f;
+        // 始点と終点の間の距離を計算(x,z平面)
         Vector2 startPoint_XZ = new Vector2(startPoint.x, startPoint.z);
         Vector2 endPoint_XZ = new Vector2(endPoint.x, endPoint.z);
 
@@ -27,12 +31,6 @@ public class Ball : MonoBehaviour
         float z = endPoint.z - startPoint.z;
 
         float launchAngleRad = launchAngle * Mathf.Deg2Rad;
-
-        // 射出速度を求める
-        // float launchVelocity = Mathf.Sqrt(Mathf.Abs(horizontalDistance * Physics.gravity.y) / Mathf.Sin(2f * launchAngleRad));
-        float launchVelocity = Mathf.Sqrt(Physics.gravity.y/(2*(distance*Mathf.Tan(launchAngleRad)-z)))*distance/Mathf.Cos(launchAngleRad);
-        // 始点と終点の間の距離を計算(x,z平面)
-        
 
         float velocityX = launchVelocity * Mathf.Cos(launchAngleRad) * cosine;
         float velocityY = launchVelocity * Mathf.Sin(launchAngleRad);
