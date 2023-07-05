@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    /*
-   * 1.マウスクリック
-   * 2.クリックされた座標を取得
-   * 3.取得した座標にSleap関数で飛ばす
-   */
-
-    //落下地点（クリックした座標）
-    Vector3 ThrowPoint = new Vector3(0, 0, 0);
+    public static BallController Instance { get; private set; }
 
     // 射出角度
     public float ThrowingAngle = 60;
@@ -34,23 +27,8 @@ public class BallController : MonoBehaviour
 
     void _Throw()
     {
-
-        ////左クリック時のマウス座標を取得
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    //スクリーン座標からワールド座標に変換してから代入
-        //    var MousePos = Input.mousePosition;
-        //    var ScreenPos = new Vector3(MousePos.x, MousePos.y, 40f);
-        //    ThrowPoint = Camera.main.ScreenToWorldPoint(ScreenPos);
-        //    ThrowPoint.y = 1;
-
-            
-        //}
-        Throwing();
-    }
-    private void Throwing()
-    {
         GameObject ball = Instantiate(m_shootObject, m_shootPoint.position, Quaternion.identity);
+        ball.transform.parent = this.transform;
 
         // 射出速度を算出
         Vector3 velocity = CalculateVelocity(ball.transform.position, m_target.transform.position, ThrowingAngle);
@@ -88,5 +66,24 @@ public class BallController : MonoBehaviour
         {
             return (new Vector3(pointB.x - pointA.x, x * Mathf.Tan(rad), pointB.z - pointA.z).normalized * speed);
         }
+    }
+
+    public Transform GetBallOfTheNearest(Transform target)
+    {
+        Vector2 targetXZ = new Vector2(target.position.x, target.position.z);
+        Transform theNearestTF = null;
+        float theNearestDistance = 0f;
+        int countNum = 1;
+        foreach (var item in transform.GetComponentsInChildren<Transform>())
+        {
+            float distance = Vector2.Distance(targetXZ, new Vector2(item.position.x, item.position.z));
+            if (countNum == 1 || distance < theNearestDistance)
+            {
+                theNearestTF = item;
+                theNearestDistance = distance;
+            }
+            countNum++;
+        }
+        return theNearestTF;
     }
 }

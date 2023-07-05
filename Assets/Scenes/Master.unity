@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00766b13f3c4b3e4eb995780401c36d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThrowingAngle: 50
+  ThrowingAngle: 80
   m_shootPoint: {fileID: 680028032}
   m_target: {fileID: 1156225126}
   m_shootObject: {fileID: 9032978118570858988, guid: 23cb9abe52a88744ea3b66e26d9b5f2c, type: 3}
@@ -515,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 37959277599678341, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.01
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 37959277599678341, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
       propertyPath: m_LocalPosition.z
