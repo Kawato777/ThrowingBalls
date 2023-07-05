@@ -17,11 +17,7 @@ public class BallController : MonoBehaviour
             return instance;
         }
     }
-    // 射出角度
-    public float ThrowingAngle = 60;
 
-    [SerializeField]
-    private Transform m_shootPoint = null;
     [SerializeField]
     private Transform m_target = null;
     [SerializeField]
@@ -29,20 +25,13 @@ public class BallController : MonoBehaviour
     [SerializeField,Range(0.0f,1.0f)]
     private float GosaNum = 0.1f;
 
-    private void Update()
+    public void _Throw(float throwingAngle,Vector3 shootPointPos)
     {
-        if(Input.GetMouseButtonDown(0)){
-            _Throw();
-        }
-    }
-
-    void _Throw()
-    {
-        GameObject ball = Instantiate(m_shootObject, m_shootPoint.position, Quaternion.identity);
+        GameObject ball = Instantiate(m_shootObject, shootPointPos, Quaternion.identity);
         ball.transform.parent = this.transform;
 
         // 射出速度を算出
-        Vector3 velocity = CalculateVelocity(ball.transform.position, m_target.transform.position, ThrowingAngle);
+        Vector3 velocity = CalculateVelocity(ball.transform.position, m_target.transform.position, throwingAngle);
 
         // 誤差を付与
         velocity.x = Random.Range(velocity.x * (1 - GosaNum), velocity.x * (1 + GosaNum));
@@ -71,6 +60,7 @@ public class BallController : MonoBehaviour
         if (float.IsNaN(speed))
         {
             // 条件を満たす初速を算出できなければVector3.zeroを返す
+            Debug.LogError("初速計算不能");
             return Vector3.zero;
         }
         else
@@ -100,5 +90,10 @@ public class BallController : MonoBehaviour
             countNum++;
         }
         return theNearestTF;
+    }
+
+    public int GetGoalBallsCount(int throwingBallsCount)
+    {
+        return throwingBallsCount - transform.childCount;
     }
 }

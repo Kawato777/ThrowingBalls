@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class Person : MonoBehaviour
 {
+    [SerializeField]
+    Transform headTF;
+    [SerializeField]
+    Transform TargetTF;
+    [SerializeField]
+    float shootAngle = 65f;
+    [SerializeField]
+    int shootBallsNum = 100;
+
+    Vector3 shootPos;
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        shootPos = headTF.position + new Vector3(0, 0.2f, 0f);
+        Debug.Log(Vector3.Angle(new Vector3(TargetTF.position.x - transform.position.x, 0f, TargetTF.position.z - transform.position.z), TargetTF.position - transform.position));
+        for(int i = 0; i < shootBallsNum; i++)
         {
-            Destroy(BallController.Instance.GetBallOfTheNearest(transform).gameObject);
+            BallController.Instance._Throw(shootAngle, shootPos);
         }
+        FieldManager.Instance.GetBallsCountNum(shootBallsNum);
     }
 }
