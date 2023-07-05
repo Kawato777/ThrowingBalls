@@ -15,4 +15,19 @@ public class Ball : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Debug.Log(collision.gameObject.name);
+        //Debug.Log(collision.gameObject.tag);
+        if(collision.gameObject.tag == "Target")
+        {
+            Invoke(nameof(DestroyThis), 1.0f);
+        }
+    }
+
+    void DestroyThis()
+    {
+        Destroy(gameObject);
+    }
 }

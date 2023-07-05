@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5154993190427142923}
   - component: {fileID: 8804822985426374388}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 155554875667874248}
   - component: {fileID: 6327164288847955003}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: PlayingArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
