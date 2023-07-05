@@ -25,7 +25,9 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
-        _Throw();
+        if(Input.GetMouseButtonDown(0)){
+            _Throw();
+        }
     }
 
     void _Throw()
