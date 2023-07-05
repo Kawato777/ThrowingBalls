@@ -24,6 +24,12 @@ public class Ball : MonoBehaviour
         {
             Invoke(nameof(DestroyThis), 1.0f);
         }
+        if(collision.gameObject.name == "Ground")
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.isKinematic = true;
+            rb.isKinematic = false;
+        }
     }
 
     void DestroyThis()
