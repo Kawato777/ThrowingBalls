@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Person : MonoBehaviour
 {
-    [SerializeField]
-    BallController ballController;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +13,9 @@ public class Person : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Destroy(BallController.Instance.GetBallOfTheNearest(transform).gameObject);
+        }
     }
 }

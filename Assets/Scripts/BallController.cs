@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    public static BallController Instance { get; private set; }
+    private static BallController instance;
 
+    public static BallController Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<BallController>();
+            }
+            return instance;
+        }
+    }
     // 射出角度
     public float ThrowingAngle = 60;
 
@@ -76,6 +87,10 @@ public class BallController : MonoBehaviour
         int countNum = 1;
         foreach (var item in transform.GetComponentsInChildren<Transform>())
         {
+            if(item.transform == this.transform)
+            {
+                continue;
+            }
             float distance = Vector2.Distance(targetXZ, new Vector2(item.position.x, item.position.z));
             if (countNum == 1 || distance < theNearestDistance)
             {

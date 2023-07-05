@@ -20,20 +20,16 @@ public class Ball : MonoBehaviour
     {
         //Debug.Log(collision.gameObject.name);
         //Debug.Log(collision.gameObject.tag);
-        if(collision.gameObject.tag == "Target")
+        if(collision.gameObject.CompareTag("Target"))
         {
-            Invoke(nameof(DestroyThis), 1.0f);
+            Destroy(gameObject, 1.0f);
         }
+
         if(collision.gameObject.name == "Ground")
         {
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.isKinematic = true;
             rb.isKinematic = false;
         }
-    }
-
-    void DestroyThis()
-    {
-        Destroy(gameObject);
     }
 }
