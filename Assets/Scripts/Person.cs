@@ -18,11 +18,11 @@ public class Person : MonoBehaviour
     void Start()
     {
         shootPos = headTF.position + new Vector3(0, 0.2f, 0f);
-        Debug.Log(Vector3.Angle(new Vector3(TargetTF.position.x - transform.position.x, 0f, TargetTF.position.z - transform.position.z), TargetTF.position - transform.position));
+        //Debug.Log(Vector3.Angle(new Vector3(TargetTF.position.x - transform.position.x, 0f, TargetTF.position.z - transform.position.z), TargetTF.position - transform.position));
+        FieldManager.Instance.SetThrowBallsCount(shootBallsNum);
         for(int i = 0; i < shootBallsNum; i++)
         {
             BallController.Instance._Throw(shootAngle, shootPos);
         }
-        FieldManager.Instance.GetBallsCountNum(shootBallsNum);
     }
 }

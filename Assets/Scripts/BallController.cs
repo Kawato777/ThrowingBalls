@@ -91,9 +91,4 @@ public class BallController : MonoBehaviour
         }
         return theNearestTF;
     }
-
-    public int GetGoalBallsCount(int throwingBallsCount)
-    {
-        return throwingBallsCount - transform.childCount;
-    }
 }

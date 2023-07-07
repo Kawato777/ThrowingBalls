@@ -6,6 +6,7 @@ public class FieldManager : MonoBehaviour
 {
     private static FieldManager instance;
     public bool isPlaying = false;
+    int allBallsCount, goalBallsCount, throwBallsCount = 0;
 
     public static FieldManager Instance
     {
@@ -19,16 +20,24 @@ public class FieldManager : MonoBehaviour
         }
     }
 
-    public void GetBallsCountNum(int num) 
+    public void BallCount(bool isGoal) 
     {
-        StartCoroutine(Banana(num));
+        allBallsCount++;
+        if (isGoal)
+        {
+            goalBallsCount++;
+        }
+        if(allBallsCount == throwBallsCount)
+        {
+            Debug.Log(goalBallsCount);
+        }
     }
 
-    IEnumerator Banana(int num)
+    public void SetThrowBallsCount(int throwBallNum)
     {
-        yield return new WaitForSeconds(3f);
-        Debug.Log(BallController.Instance.GetGoalBallsCount(num));
+        throwBallsCount = throwBallNum;
     }
+
     // Start is called before the first frame update
     void Start()
     {

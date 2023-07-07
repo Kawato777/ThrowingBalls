@@ -22,6 +22,7 @@ public class Ball : MonoBehaviour
         //Debug.Log(collision.gameObject.tag);
         if(collision.gameObject.CompareTag("Target"))
         {
+            FieldManager.Instance.BallCount(true);
             Destroy(gameObject, 1.0f);
         }
 
@@ -30,6 +31,7 @@ public class Ball : MonoBehaviour
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.isKinematic = true;
             rb.isKinematic = false;
+            FieldManager.Instance.BallCount(false);
         }
     }
 }
