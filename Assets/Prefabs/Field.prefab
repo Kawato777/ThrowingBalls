@@ -211,11 +211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 942147384555424947, guid: 00d0230ad4aebe4448f01c7e1e83b023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.769e-12
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 942147384555424947, guid: 00d0230ad4aebe4448f01c7e1e83b023, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00117
+      value: -0.00061
       objectReference: {fileID: 0}
     - target: {fileID: 3977532771457179007, guid: 00d0230ad4aebe4448f01c7e1e83b023, type: 3}
       propertyPath: m_Name
@@ -347,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 5790690254189982192}
     - target: {fileID: 5367091411737862947, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
       propertyPath: shootAngle
-      value: 80
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 8837521818392457594, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
       propertyPath: m_LocalScale.y
