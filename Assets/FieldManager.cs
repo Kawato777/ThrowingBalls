@@ -6,7 +6,8 @@ public class FieldManager : MonoBehaviour
 {
     private static FieldManager instance;
     public bool isPlaying = false;
-    int allBallsCount, goalBallsCount, throwBallsCount = 0;
+    int allBallsCount, goalBallsCount = 0;
+    public int throwBallsCount = 100;
 
     public static FieldManager Instance
     {
@@ -31,11 +32,6 @@ public class FieldManager : MonoBehaviour
         {
             Debug.Log(goalBallsCount);
         }
-    }
-
-    public void SetThrowBallsCount(int throwBallNum)
-    {
-        throwBallsCount = throwBallNum;
     }
 
     // Start is called before the first frame update

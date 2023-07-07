@@ -370,11 +370,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 899165994, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
       propertyPath: GosaNum
-      value: 0.1
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 263667188895568684, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0015812907
+      objectReference: {fileID: 0}
+    - target: {fileID: 263667188895568684, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0015234494
+      objectReference: {fileID: 0}
+    - target: {fileID: 263667188895568684, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.769e-12
+      objectReference: {fileID: 0}
+    - target: {fileID: 263667188895568684, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00117
       objectReference: {fileID: 0}
     - target: {fileID: 1631156126173412752, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
       propertyPath: shootAngle
-      value: 70
+      value: 88
+      objectReference: {fileID: 0}
+    - target: {fileID: 1631156126173412752, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
+      propertyPath: shootBallsNum
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2773537513516576713, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 3355799580599389388, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
       propertyPath: m_RootOrder
@@ -420,13 +444,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5668698473462994235, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
+      propertyPath: throwBallsCount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6024157572528928029, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
       propertyPath: m_Name
       value: Field
       objectReference: {fileID: 0}
     - target: {fileID: 6655864133275713846, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047715814177346459, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
