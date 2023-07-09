@@ -29,7 +29,7 @@ public class Ball : MonoBehaviour
 
     IEnumerator DesroyBall()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(7f);
         FieldManager.Instance.BallCount(false);
         Destroy(gameObject);
     }

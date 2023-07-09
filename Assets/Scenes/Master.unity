@@ -418,7 +418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5668698473462994235, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
       propertyPath: distance
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5668698473462994235, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
       propertyPath: personTall
@@ -426,7 +426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5668698473462994235, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
       propertyPath: shootAngle
-      value: 65
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 6024157572528928029, guid: 4904537f0dbbfd240b8b5619c7e328ee, type: 3}
       propertyPath: m_Name

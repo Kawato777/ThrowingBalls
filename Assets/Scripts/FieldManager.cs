@@ -45,21 +45,21 @@ public class FieldManager : MonoBehaviour
         }
         if(allBallsCount == throwBallsCount)
         {
-            Debug.Log(goalBallsCount);
+            //Debug.Log(goalBallsCount);
             nowThrowTimes++;
             goalBallsCounts.Add(goalBallsCount);
             goalBallsCount = 0;
             allBallsCount = 0;
             if(nowThrowTimes == 3 && goalBallsCounts.Average() <= 1)
             {
-                Debug.Log($"発射角度 : {shootAngle},平均値 : {goalBallsCounts.Average()}");
+                Debug.Log($"発射角度 : {shootAngle}°,平均値 : {goalBallsCounts.Average()}");
                 shootAngle++;
                 goalBallsCounts = new List<int>();
                 nowThrowTimes = 0;
             }
             if(nowThrowTimes == throwTimes)
             {
-                Debug.Log($"発射角度 : {shootAngle},平均値 : {goalBallsCounts.Average()}");
+                Debug.Log($"発射角度 : {shootAngle}°,平均値 : {goalBallsCounts.Average()}");
                 shootAngle++;
                 goalBallsCounts = new List<int>();
                 nowThrowTimes = 0;
