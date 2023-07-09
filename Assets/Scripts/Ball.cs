@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     bool isSend = false;
+    bool isUP = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,15 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(transform.position.y < -10)
+        {
+            FieldManager.Instance.BallCount(false);
+            Destroy(gameObject);
+        }
+        if(transform.position.y > 7.65f)
+        {
+            isUP = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,7 +34,7 @@ public class Ball : MonoBehaviour
         {
             if (isSend == false)
             {
-                FieldManager.Instance.BallCount(true);
+                FieldManager.Instance.BallCount(isUP);
                 isSend = true;
             }
             Destroy(gameObject, 1.0f);
@@ -42,5 +51,15 @@ public class Ball : MonoBehaviour
                 isSend = true;
             }
         }
+
+        //if (collision.gameObject.CompareTag("Target2"))
+        //{
+        //    if (isSend == false)
+        //    {
+        //        FieldManager.Instance.BallCount(false);
+        //        isSend = true;
+        //    }
+        //    Destroy(gameObject);
+        //}
     }
 }

@@ -91,4 +91,12 @@ public class BallController : MonoBehaviour
         }
         return theNearestTF;
     }
+
+    public void DestroyBalls()
+    {
+        foreach(Transform item in transform)
+        {
+            Destroy(item.gameObject);
+        }
+    }
 }
