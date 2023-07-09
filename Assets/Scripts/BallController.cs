@@ -22,8 +22,12 @@ public class BallController : MonoBehaviour
     private Transform m_target = null;
     [SerializeField]
     private GameObject m_shootObject = null;
-    [SerializeField,Range(0.0f,1.0f)]
     private float GosaNum = 0.1f;
+
+    public void SetGosaNum(float gosaNum)
+    {
+        GosaNum = gosaNum;
+    }
 
     public void _Throw(float throwingAngle,Vector3 shootPointPos)
     {

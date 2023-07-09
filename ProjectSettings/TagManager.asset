@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Target
   - Ball
-  - Target2
+  - Ground
   layers:
   - Default
   - TransparentFX

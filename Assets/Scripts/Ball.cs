@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(DesroyBall());
     }
 
     // Update is called once per frame
@@ -24,6 +24,14 @@ public class Ball : MonoBehaviour
         {
             isUP = true;
         }
+        
+    }
+
+    IEnumerator DesroyBall()
+    {
+        yield return new WaitForSeconds(10f);
+        FieldManager.Instance.BallCount(false);
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,7 +48,7 @@ public class Ball : MonoBehaviour
             Destroy(gameObject, 1.0f);
         }
 
-        if(collision.gameObject.name == "Ground")
+        if(collision.gameObject.CompareTag("Ground"))
         {
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.isKinematic = true;

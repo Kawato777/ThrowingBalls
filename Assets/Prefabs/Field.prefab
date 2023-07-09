@@ -46,7 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 3321290900853120255}
   m_shootObject: {fileID: 9032978118570858988, guid: 23cb9abe52a88744ea3b66e26d9b5f2c, type: 3}
-  GosaNum: 0.1
 --- !u!1 &4984588867232342882
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +60,7 @@ GameObject:
   - component: {fileID: 2192698304058103592}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,7 +194,11 @@ MonoBehaviour:
   isPlaying: 0
   throwBallsCount: 100
   throwTimes: 10
+  shootAngle: 88
+  distance: 1
+  personTall: 1.6
   person: {fileID: 1631156126173412752}
+  GosaNum: 0.1
 --- !u!1001 &1061606946806079391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -269,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7828936258574151580, guid: 00d0230ad4aebe4448f01c7e1e83b023, type: 3}
       propertyPath: m_TagString
-      value: Target2
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 9155643004307809499, guid: 00d0230ad4aebe4448f01c7e1e83b023, type: 3}
       propertyPath: m_LocalScale.y
@@ -348,12 +351,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5367091411737862947, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
+      propertyPath: bodyTF
+      value: 
+      objectReference: {fileID: 2773537513516576713}
+    - target: {fileID: 5367091411737862947, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
       propertyPath: TargetTF
+      value: 
+      objectReference: {fileID: 5790690254189982192}
+    - target: {fileID: 5367091411737862947, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
+      propertyPath: targetTF
       value: 
       objectReference: {fileID: 5790690254189982192}
     - target: {fileID: 5367091411737862947, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
       propertyPath: shootAngle
       value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 7538628615641809090, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409925391031337658, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 8837521818392457594, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
       propertyPath: m_LocalScale.y
@@ -362,6 +381,10 @@ PrefabInstance:
     - target: {fileID: 8910725565250805668, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
       propertyPath: m_Name
       value: Person
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910725565250805668, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
@@ -376,6 +399,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafdd6d3e0018ca4caf1f21748fd896b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2773537513516576713 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8837521818392457594, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}
+  m_PrefabInstance: {fileID: 6690302757161393843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6655864133275713846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 37959277599678341, guid: cbe722b857576654b8b13e72f25cab2e, type: 3}

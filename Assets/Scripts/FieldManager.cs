@@ -11,10 +11,18 @@ public class FieldManager : MonoBehaviour
     public int throwBallsCount = 100;
     [SerializeField]
     int throwTimes = 10;
+    [SerializeField, Range(65, 89)]
+    int shootAngle = 65;
+    [SerializeField]
+    float distance = 1.0f;
+    [SerializeField]
+    float personTall = 1.60f;
     int nowThrowTimes = 0;
     List<int> goalBallsCounts = new List<int>();
     [SerializeField]
     Person person;
+    [SerializeField, Range(0.0f, 1.0f)]
+    private float GosaNum = 0.1f;
 
     public static FieldManager Instance
     {
@@ -38,26 +46,39 @@ public class FieldManager : MonoBehaviour
         if(allBallsCount == throwBallsCount)
         {
             Debug.Log(goalBallsCount);
-            BallController.Instance.DestroyBalls();
             nowThrowTimes++;
             goalBallsCounts.Add(goalBallsCount);
             goalBallsCount = 0;
             allBallsCount = 0;
+            if(nowThrowTimes == 3 && goalBallsCounts.Average() <= 1)
+            {
+                Debug.Log($"発射角度 : {shootAngle},平均値 : {goalBallsCounts.Average()}");
+                shootAngle++;
+                goalBallsCounts = new List<int>();
+                nowThrowTimes = 0;
+            }
             if(nowThrowTimes == throwTimes)
             {
-                Debug.Log($"平均値 : {goalBallsCounts.Average()}");
+                Debug.Log($"発射角度 : {shootAngle},平均値 : {goalBallsCounts.Average()}");
+                shootAngle++;
+                goalBallsCounts = new List<int>();
+                nowThrowTimes = 0;
             }
-            else
+            if(shootAngle == 90)
             {
-                StartCoroutine(person.ThrowBalls(throwBallsCount));
+                return;
             }
+            BallController.Instance.DestroyBalls();
+            StartCoroutine(person.ThrowBalls(throwBallsCount,shootAngle));
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(person.ThrowBalls(throwBallsCount));
+        person.SetLocating(distance, personTall);
+        BallController.Instance.SetGosaNum(GosaNum);
+        StartCoroutine(person.ThrowBalls(throwBallsCount,shootAngle));
     }
 
     // Update is called once per frame
