@@ -25,13 +25,13 @@ public class Person : MonoBehaviour
         shootPos = headTF.position + new Vector3(0, 0.2f, 0f);
     }
 
-    public IEnumerator ThrowBalls(int shootBallsNum,int shootAngle)
+    public IEnumerator ThrowBalls(int shootBallsNum,int shootAngle,bool isAirResistant)
     {
         bodyTF.tag = "Untagged";
         headTF.tag = "Untagged";
         for (int i = 0; i < shootBallsNum; i++)
         {
-            BallController.Instance._Throw(shootAngle, shootPos);
+            BallController.Instance._Throw(shootAngle, shootPos, isAirResistant);
             yield return new WaitForEndOfFrame();
         }
         bodyTF.tag = "Ground";

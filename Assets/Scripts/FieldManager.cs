@@ -23,7 +23,8 @@ public class FieldManager : MonoBehaviour
     Person person;
     [SerializeField, Range(0.0f, 1.0f)]
     private float GosaNum = 0.1f;
-
+    [SerializeField]
+    bool isAirResistant = false;
     public static FieldManager Instance
     {
         get
@@ -69,7 +70,7 @@ public class FieldManager : MonoBehaviour
                 return;
             }
             BallController.Instance.DestroyBalls();
-            StartCoroutine(person.ThrowBalls(throwBallsCount,shootAngle));
+            StartCoroutine(person.ThrowBalls(throwBallsCount,shootAngle, isAirResistant));
         }
     }
 
@@ -78,7 +79,7 @@ public class FieldManager : MonoBehaviour
     {
         person.SetLocating(distance, personTall);
         BallController.Instance.SetGosaNum(GosaNum);
-        StartCoroutine(person.ThrowBalls(throwBallsCount,shootAngle));
+        StartCoroutine(person.ThrowBalls(throwBallsCount,shootAngle, isAirResistant));
     }
 
     // Update is called once per frame
