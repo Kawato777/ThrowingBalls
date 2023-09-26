@@ -39,7 +39,7 @@ public class BallController : MonoBehaviour
         if (isAirResistant)
         {
             // 初速度を求めるけど、2次元空間で考えているから、3次元に変えてあげる。https://qiita.com/kamasu/items/0874022be9a327446665
-            velocity = GetInitialVelocity();
+            // velocity = GetInitialVelocity();
         }
         else
         {
