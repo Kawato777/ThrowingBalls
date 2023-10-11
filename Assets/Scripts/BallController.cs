@@ -45,8 +45,7 @@ public class BallController : MonoBehaviour
         }
         else
         {
-            // velocity = CalculateVelocity(ball.transform.position, m_target.transform.position, throwingAngle);
-            velocity = CalculateVelocity2(initialSpeed, throwingAngle);
+            velocity = CalculateVelocity(ball.transform.position,m_target.transform.position, throwingAngle);
         }
 
         // 誤差を付与
@@ -71,7 +70,9 @@ public class BallController : MonoBehaviour
         float y = pointA.y - pointB.y;
 
         // 斜方投射の公式を初速度について解く
-        float speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) / (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
+        // float speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) / (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
+
+        float speed = initialSpeed;
 
         if (float.IsNaN(speed))
         {
@@ -81,22 +82,8 @@ public class BallController : MonoBehaviour
         }
         else
         {
-            return (new Vector3(pointB.x - pointA.x, x * Mathf.Tan(rad), pointB.z - pointA.z).normalized * speed);
+            return new Vector3(pointB.x - pointA.x, x * Mathf.Tan(rad), pointB.z - pointA.z).normalized * speed;
         }
-    }
-
-    Vector3 CalculateVelocity2(float initialSpeed, float angle)
-    {
-        // 射出角度をラジアンに変換
-        float launchAngleRad = (180 - angle) * Mathf.Deg2Rad;
-
-        // 初速度を水平方向と垂直方向の速度に分解
-        float horizontalSpeed = initialSpeed * Mathf.Cos(launchAngleRad);
-        float verticalSpeed = initialSpeed * Mathf.Sin(launchAngleRad);
-
-        // 初速度を設定
-        Vector3 launchVelocity = new Vector3(horizontalSpeed, verticalSpeed, 0f);
-        return launchVelocity;
     }
 
     public Transform GetBallOfTheNearest(Transform target)

@@ -65,7 +65,7 @@ public class FieldManager : MonoBehaviour
                 goalBallsCounts = new List<int>();
                 nowThrowTimes = 0;
             }
-            if(shootAngle == 90)
+            if(shootAngle >= 90)
             {
                 return;
             }
