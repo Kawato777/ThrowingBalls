@@ -69,8 +69,12 @@ public class FieldManager : MonoBehaviour
             {
                 return;
             }
-            BallController.Instance.DestroyBalls();
-            StartCoroutine(person.ThrowBalls(throwBallsCount,shootAngle, isAirResistant));
+            else
+            {
+                BallController.Instance.DestroyBalls();
+                StartCoroutine(person.ThrowBalls(throwBallsCount,shootAngle, isAirResistant));
+            }
+            
         }
     }
 

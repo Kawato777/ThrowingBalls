@@ -23,6 +23,8 @@ public class BallController : MonoBehaviour
     [SerializeField]
     private GameObject m_shootObject = null;
     private float GosaNum = 0.1f;
+    [SerializeField]
+    float initialSpeed = 6.84f;
 
     public void SetGosaNum(float gosaNum)
     {
@@ -43,7 +45,8 @@ public class BallController : MonoBehaviour
         }
         else
         {
-            velocity = CalculateVelocity(ball.transform.position, m_target.transform.position, throwingAngle);
+            // velocity = CalculateVelocity(ball.transform.position, m_target.transform.position, throwingAngle);
+            velocity = CalculateVelocity2(initialSpeed, throwingAngle);
         }
 
         // 誤差を付与
@@ -80,6 +83,20 @@ public class BallController : MonoBehaviour
         {
             return (new Vector3(pointB.x - pointA.x, x * Mathf.Tan(rad), pointB.z - pointA.z).normalized * speed);
         }
+    }
+
+    Vector3 CalculateVelocity2(float initialSpeed, float angle)
+    {
+        // 射出角度をラジアンに変換
+        float launchAngleRad = (180 - angle) * Mathf.Deg2Rad;
+
+        // 初速度を水平方向と垂直方向の速度に分解
+        float horizontalSpeed = initialSpeed * Mathf.Cos(launchAngleRad);
+        float verticalSpeed = initialSpeed * Mathf.Sin(launchAngleRad);
+
+        // 初速度を設定
+        Vector3 launchVelocity = new Vector3(horizontalSpeed, verticalSpeed, 0f);
+        return launchVelocity;
     }
 
     public Transform GetBallOfTheNearest(Transform target)

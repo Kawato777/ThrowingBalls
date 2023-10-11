@@ -20,9 +20,9 @@ public class Person : MonoBehaviour
 
     public void SetLocating(float distance,float personTall)
     {
-        transform.position = new Vector3(distance, personTall, transform.position.z);
-        bodyTF.localScale = new Vector3(bodyTF.localScale.x, personTall, bodyTF.localScale.z);
-        shootPos = headTF.position + new Vector3(0, 0.2f, 0f);
+        transform.position = new Vector3(distance, personTall/2, transform.position.z);
+        transform.localScale = new Vector3(transform.localScale.x, personTall, transform.localScale.z);
+        shootPos = headTF.position + new Vector3(0, 0.5f, 0f);
     }
 
     public IEnumerator ThrowBalls(int shootBallsNum,int shootAngle,bool isAirResistant)

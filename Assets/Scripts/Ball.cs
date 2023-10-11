@@ -20,10 +20,10 @@ public class Ball : MonoBehaviour
             FieldManager.Instance.BallCount(false);
             Destroy(gameObject);
         }
-        if(transform.position.y > 7.65f)
-        {
-            isUP = true;
-        }
+        //if(transform.position.y > 7.65f)
+        //{
+          //  isUP = true;
+        //}
         
     }
 
@@ -42,7 +42,8 @@ public class Ball : MonoBehaviour
         {
             if (isSend == false)
             {
-                FieldManager.Instance.BallCount(isUP);
+                //            FieldManager.Instance.BallCount(isUP);
+                FieldManager.Instance.BallCount(true);
                 isSend = true;
             }
             Destroy(gameObject, 1.0f);
