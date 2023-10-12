@@ -6,9 +6,12 @@ public class Ball : MonoBehaviour
 {
     bool isSend = false;
     bool isUP = false;
+    public float coefficient;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         StartCoroutine(DesroyBall());
     }
 
@@ -20,11 +23,17 @@ public class Ball : MonoBehaviour
             FieldManager.Instance.BallCount(false);
             Destroy(gameObject);
         }
+
         //if(transform.position.y > 7.65f)
         //{
           //  isUP = true;
-        //}
-        
+        //}        
+    }
+
+    void FixedUpdate()
+    {
+        // ãÛãCíÔçRÇó^Ç¶ÇÈ
+        rb.AddForce(-coefficient * rb.velocity);
     }
 
     IEnumerator DesroyBall()
@@ -51,7 +60,7 @@ public class Ball : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Ground"))
         {
-            Rigidbody rb = GetComponent<Rigidbody>();
+            
             rb.isKinematic = true;
             rb.isKinematic = false;
             if(isSend == false)

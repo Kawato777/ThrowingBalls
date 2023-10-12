@@ -24,6 +24,8 @@ public class BallController : MonoBehaviour
     private GameObject m_shootObject = null;
     private float GosaNum = 0.1f;
     [SerializeField]
+    float limidSpeed = 6.84f;
+    [SerializeField]
     float initialSpeed = 6.84f;
 
     public void SetGosaNum(float gosaNum)
@@ -70,7 +72,7 @@ public class BallController : MonoBehaviour
         float y = pointA.y - pointB.y;
 
         // 斜方投射の公式を初速度について解く
-        // float speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) / (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
+        //float speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) / (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
 
         float speed = initialSpeed;
 

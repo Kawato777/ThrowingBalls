@@ -312,7 +312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570350358}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.2, z: 0}
+  m_LocalPosition: {x: 0, y: 4.07, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -777,13 +777,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaying: 0
-  throwBallsCount: 1000
+  throwBallsCount: 100
   throwTimes: 3
-  shootAngle: 65
+  shootAngle: 78
   distance: 1
   personTall: 1.6
   person: {fileID: 5274762731400206250}
-  GosaNum: 0
+  GosaNum: 0.1
   isAirResistant: 0
 --- !u!4 &1576172382384127311
 Transform:
@@ -1046,7 +1046,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 570350359}
   m_shootObject: {fileID: 3345393943436142416, guid: 1f1825862d8dec04195d55778706af2c, type: 3}
-  initialSpeed: 6.84
+  limidSpeed: 10
+  initialSpeed: 8
 --- !u!4 &6886213953669072145
 Transform:
   m_ObjectHideFlags: 0
