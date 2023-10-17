@@ -831,8 +831,8 @@ MonoBehaviour:
   isPlaying: 0
   throwBallsCount: 100
   throwTimes: 3
-  shootAngle: 70
-  distance: 1
+  shootAngle: 65
+  distance: 3.5
   personTall: 1.6
   person: {fileID: 5274762731400206250}
   GosaNum: 0.1
@@ -969,7 +969,7 @@ Transform:
   m_GameObject: {fileID: 3061423888444855010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.01, z: 0}
-  m_LocalScale: {x: 6, y: 0.01, z: 6}
+  m_LocalScale: {x: 7, y: 0.01, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7607830202517899682}
@@ -1098,7 +1098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 570350359}
   m_shootObject: {fileID: 3345393943436142416, guid: 1f1825862d8dec04195d55778706af2c, type: 3}
-  limidSpeed: 10
+  limidSpeed: 9
   initialSpeed: 8
 --- !u!4 &6886213953669072145
 Transform:

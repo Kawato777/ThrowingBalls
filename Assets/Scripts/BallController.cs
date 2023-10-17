@@ -82,7 +82,7 @@ public class BallController : MonoBehaviour
 
         // float speed = initialSpeed;
 
-        if (float.IsNaN(speed) || speed >= 10.0f)
+        if (float.IsNaN(speed) || speed >= limidSpeed)
         {
             // 条件を満たす初速を算出できなければVector3.zeroを返す
             Debug.LogError("初速計算不能");
