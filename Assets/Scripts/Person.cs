@@ -32,7 +32,7 @@ public class Person : MonoBehaviour
         for (int i = 0; i < shootBallsNum; i++)
         {
             BallController.Instance._Throw(shootAngle, shootPos, isAirResistant);
-            yield return new WaitForFixedUpdate();
+            yield return new WaitForSeconds(0.05f);
         }
         bodyTF.tag = "Ground";
         headTF.tag = "Ground";

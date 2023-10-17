@@ -11,7 +11,6 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         StartCoroutine(DesroyBall());
     }
 
@@ -60,7 +59,7 @@ public class Ball : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Ground"))
         {
-            
+            rb = GetComponent<Rigidbody>();
             rb.isKinematic = true;
             rb.isKinematic = false;
             if(isSend == false)
