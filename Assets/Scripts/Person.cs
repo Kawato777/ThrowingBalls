@@ -32,9 +32,19 @@ public class Person : MonoBehaviour
         for (int i = 0; i < shootBallsNum; i++)
         {
             BallController.Instance._Throw(shootAngle, shootPos, isAirResistant);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForFixedUpdate();
         }
         bodyTF.tag = "Ground";
         headTF.tag = "Ground";
     }
+
+    //public int SendStartAngle()
+    //{
+      //  int angle = 0;
+        //Vector3 to = new Vector3(targetTF.position.x - headTF.position.x, targetTF.position.y - headTF.position.y, targetTF.position.z - headTF.position.z);
+        //Vector3 from = new Vector3(to.x, 0, to.z);
+       // angle = Mathf.CeilToInt(Vector3.Angle(from,to));
+        //Debug.Log(angle);
+        //return angle;
+   // }
 }

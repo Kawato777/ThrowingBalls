@@ -48,6 +48,12 @@ public class BallController : MonoBehaviour
         else
         {
             velocity = CalculateVelocity(ball.transform.position,m_target.transform.position, throwingAngle);
+            if(velocity == Vector3.zero)
+            {
+                FieldManager.Instance.BallCount(false); 
+                Destroy(ball);
+                return;
+            }
         }
 
         // 誤差を付与
@@ -72,11 +78,11 @@ public class BallController : MonoBehaviour
         float y = pointA.y - pointB.y;
 
         // 斜方投射の公式を初速度について解く
-        //float speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) / (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
+        float speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) / (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
 
-        float speed = initialSpeed;
+        // float speed = initialSpeed;
 
-        if (float.IsNaN(speed))
+        if (float.IsNaN(speed) || speed >= 10.0f)
         {
             // 条件を満たす初速を算出できなければVector3.zeroを返す
             Debug.LogError("初速計算不能");

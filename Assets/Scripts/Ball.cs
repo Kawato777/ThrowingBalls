@@ -33,7 +33,7 @@ public class Ball : MonoBehaviour
     void FixedUpdate()
     {
         // ‹ó‹C’ïR‚ğ—^‚¦‚é
-        rb.AddForce(-coefficient * rb.velocity);
+        // rb.AddForce(-coefficient * rb.velocity);
     }
 
     IEnumerator DesroyBall()

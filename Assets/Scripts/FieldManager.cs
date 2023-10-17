@@ -83,6 +83,7 @@ public class FieldManager : MonoBehaviour
     {
         person.SetLocating(distance, personTall);
         BallController.Instance.SetGosaNum(GosaNum);
+        // shootAngle = person.SendStartAngle();
         StartCoroutine(person.ThrowBalls(throwBallsCount,shootAngle, isAirResistant));
     }
 
