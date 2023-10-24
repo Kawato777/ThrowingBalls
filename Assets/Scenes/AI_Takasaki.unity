@@ -769,7 +769,7 @@ Transform:
   m_GameObject: {fileID: 3061423888444855010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.01, z: 0}
-  m_LocalScale: {x: 6, y: 0.01, z: 6}
+  m_LocalScale: {x: 7, y: 0.01, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7607830202517899682}
@@ -898,6 +898,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
   m_shootObject: {fileID: 9032978118570858988, guid: 23cb9abe52a88744ea3b66e26d9b5f2c, type: 3}
+  limidSpeed: 9
+  initialSpeed: 6.84
 --- !u!4 &6886213953669072145
 Transform:
   m_ObjectHideFlags: 0
@@ -1012,7 +1014,7 @@ GameObject:
   - component: {fileID: 274400930013195020}
   - component: {fileID: 5274762731400206250}
   m_Layer: 0
-  m_Name: Person
+  m_Name: PersonAgent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

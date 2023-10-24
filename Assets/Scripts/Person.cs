@@ -43,7 +43,7 @@ public class Person : MonoBehaviour
         Vector3 to = new Vector3(targetTF.position.x - headTF.position.x, targetTF.position.y - headTF.position.y, targetTF.position.z - headTF.position.z);
         Vector3 from = new Vector3(to.x, 0, to.z);
         int angle = Mathf.CeilToInt(Vector3.Angle(from, to));
-        Debug.Log(180 - angle);
+        // Debug.Log(angle);
         //return angle;
     }
 }

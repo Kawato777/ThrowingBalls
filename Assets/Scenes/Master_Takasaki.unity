@@ -831,8 +831,8 @@ MonoBehaviour:
   isPlaying: 0
   throwBallsCount: 100
   throwTimes: 3
-  shootAngle: 65
-  distance: 3.5
+  shootAngle: 83
+  distance: 0.5
   personTall: 1.6
   person: {fileID: 5274762731400206250}
   GosaNum: 0.1
