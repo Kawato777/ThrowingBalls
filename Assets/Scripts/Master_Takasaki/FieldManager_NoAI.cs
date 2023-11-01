@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class FieldManager : MonoBehaviour
+public class FieldManager_NoAI : MonoBehaviour
 {
-    private static FieldManager instance;
+    private static FieldManager_NoAI instance;
     public bool isPlaying = false;
     int allBallsCount, goalBallsCount = 0;
     public int throwBallsCount = 100;
@@ -25,13 +25,13 @@ public class FieldManager : MonoBehaviour
     private float GosaNum = 0.1f;
     [SerializeField]
     bool isAirResistant = false;
-    public static FieldManager Instance
+    public static FieldManager_NoAI Instance
     {
         get
         {
             if (instance == null)
             {
-                instance = FindObjectOfType<FieldManager>();
+                instance = FindObjectOfType<FieldManager_NoAI>();
             }
             return instance;
         }

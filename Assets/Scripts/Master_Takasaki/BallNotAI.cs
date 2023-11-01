@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball : MonoBehaviour
+public class BallNotAI : MonoBehaviour
 {
     bool isSend = false;
     bool isUP = false;
@@ -20,7 +20,7 @@ public class Ball : MonoBehaviour
     {
         if(transform.position.y < -10)
         {
-            FieldManager.Instance.BallCount(false);
+            FieldManager_NoAI.Instance.BallCount(false);
             Destroy(gameObject);
         }
 
@@ -39,7 +39,7 @@ public class Ball : MonoBehaviour
     IEnumerator DesroyBall()
     {
         yield return new WaitForSeconds(7f);
-        FieldManager.Instance.BallCount(false);
+        FieldManager_NoAI.Instance.BallCount(false);
         Destroy(gameObject);
     }
 
@@ -52,7 +52,7 @@ public class Ball : MonoBehaviour
             if (isSend == false)
             {
                 //            FieldManager.Instance.BallCount(isUP);
-                FieldManager.Instance.BallCount(true);
+                FieldManager_NoAI.Instance.BallCount(true);
                 isSend = true;
             }
             Destroy(gameObject, 1.0f);
@@ -65,7 +65,7 @@ public class Ball : MonoBehaviour
             rb.isKinematic = false;
             if(isSend == false)
             {
-                FieldManager.Instance.BallCount(false);
+                FieldManager_NoAI.Instance.BallCount(false);
                 isSend = true;
             }
         }

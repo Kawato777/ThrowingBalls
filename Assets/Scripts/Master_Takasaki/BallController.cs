@@ -50,7 +50,7 @@ public class BallController : MonoBehaviour
             velocity = CalculateVelocity(ball.transform.position,m_target.transform.position, throwingAngle);
             if(velocity == Vector3.zero)
             {
-                FieldManager.Instance.BallCount(false); 
+                FieldManager_NoAI.Instance.BallCount(false); 
                 Destroy(ball);
                 return;
             }
