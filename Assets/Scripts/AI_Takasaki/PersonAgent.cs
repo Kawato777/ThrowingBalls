@@ -12,6 +12,8 @@ public class PersonAgent : Agent
     BallManager ballManager;
     [SerializeField]
     FieldManager fieldManager;
+    [SerializeField]
+    Transform pocket;
     Rigidbody rBody;
     bool isThrowable;
     int havingBallsNum;
@@ -58,6 +60,12 @@ public class PersonAgent : Agent
         sensor.AddObservation(havingBallsNum);
     }
 
+    public void SendBallToPocket(GameObject ball)
+    {
+        ball.transform.parent = pocket;
+        ball.SetActive(false);
+    }
+
     public override void OnActionReceived(ActionBuffers actions)
     {
         // çsìÆÉ]Å[Éì
@@ -65,9 +73,13 @@ public class PersonAgent : Agent
         controlSignal.x = actions.ContinuousActions[0];
         controlSignal.z = actions.ContinuousActions[1];
         rBody.AddForce(controlSignal * 10);
+        controlSignal = Vector3.zero;
+        controlSignal.y = actions.ContinuousActions[2];
+        rBody.AddTorque(controlSignal * 100);
+        
         if (actions.DiscreteActions[0] == 1)
         {
-            Vector3 firstVelocity = new(actions.ContinuousActions[2], actions.ContinuousActions[3], actions.ContinuousActions[4]);
+            Vector3 firstVelocity = new(actions.ContinuousActions[3], actions.ContinuousActions[4], actions.ContinuousActions[5]);
             Throw(firstVelocity);
         }
 
@@ -84,6 +96,7 @@ public class PersonAgent : Agent
         var banana = actionsOut.ContinuousActions;
         banana[0] = Input.GetAxis("Horizontal");
         banana[1] = Input.GetAxis("Vertical");
+        banana[2] = Input.GetAxis("Mouse X");
     }
 
     public override void WriteDiscreteActionMask(IDiscreteActionMask actionMask)

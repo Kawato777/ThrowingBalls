@@ -6,10 +6,20 @@ public class AsimotoSensor : MonoBehaviour
 {
     [SerializeField]
     FieldManager fieldManager;
+    [SerializeField]
+    PersonAgent personAgent;
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Ball"))
+        {
+            personAgent.SendBallToPocket(other.gameObject);
+        }
     }
 
     // Update is called once per frame
