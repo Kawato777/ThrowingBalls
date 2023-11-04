@@ -40,6 +40,11 @@ public class BallManager : MonoBehaviour
         }
     }
 
+    public void SetBallParent(GameObject ball)
+    {
+        ball.transform.parent = transform;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
