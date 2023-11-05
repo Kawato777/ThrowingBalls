@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Ball_AI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    float airResistantNum;   // 空気抵抗係数
+    Rigidbody rb;
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        // 空気抵抗（-kv）
+        rb.AddForce(-airResistantNum * GetComponent<Rigidbody>().velocity);
     }
 }

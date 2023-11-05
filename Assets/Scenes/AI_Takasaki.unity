@@ -1133,6 +1133,8 @@ MonoBehaviour:
   playAreaDiameter: 7
   personTall: 0
   _Range: 0.1
+  gosa: 0.1
+  multipulV0SpeedNum: 9
 --- !u!1 &8710318208495610669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,7 +1220,6 @@ MonoBehaviour:
   MaxStep: 0
   ballManager: {fileID: 6886213953669072148}
   fieldManager: {fileID: 8143228217505392375}
-  pocket: {fileID: 272407265}
   nose: {fileID: 275296427}
   target: {fileID: 7607830202517899682}
 --- !u!114 &8710318208495610673

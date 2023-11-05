@@ -13,7 +13,7 @@ public class PersonAgent : Agent
     [SerializeField]
     FieldManager fieldManager;
     [SerializeField]
-    Transform pocket, nose, target;
+    Transform nose, target;
     Rigidbody rBody;
     bool isThrowable;
     List<GameObject> havingBalls = new List<GameObject>();
@@ -54,6 +54,7 @@ public class PersonAgent : Agent
     void SetPersonPos()
     {
         float playerTall = Random.Range(1.6f, 1.9f);
+        fieldManager.personTall = playerTall;
         float radius = fieldManager.playAreaDiameter / 2;
         Vector3 center = fieldManager.transform.position;
         float angle = Random.Range(0, 360);
@@ -118,6 +119,7 @@ public class PersonAgent : Agent
 
     void Throw(Vector3 firstVelocity)
     {
+        // ã ÇêœÇﬁ
         for (int i = 0; i < havingBalls.Count; i++) 
         {
             GameObject ball = havingBalls[i];
@@ -160,11 +162,22 @@ public class PersonAgent : Agent
                     break;
             }
             ball.transform.position = pos;
-            //Vector3 banana = nose.transform.forward;
-            //ball.transform.LookAt(banana, Vector3.up);
-            ball.transform.lossyScale.Set(10f, 10f, 10f);
-            // ballManager.SetBallParent(ball);
+            ball.transform.lossyScale.Set(10f, 10f, 10f); 
         }
+
+        // ã ÇìäÇ∞ÇÈ
+        firstVelocity = new(firstVelocity.x * Random.Range(1 - fieldManager.gosa, 1 + fieldManager.gosa), 
+                            firstVelocity.y * Random.Range(1 - fieldManager.gosa, 1 + fieldManager.gosa), 
+                            firstVelocity.z * Random.Range(1 - fieldManager.gosa, 1 + fieldManager.gosa));
+        foreach (var ball in havingBalls)
+        {
+            ball.GetComponent<Collider>().enabled = true;
+            Rigidbody rb = ball.GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            rb.AddForce(firstVelocity * fieldManager.multipulV0SpeedNum, ForceMode.Impulse);
+        }
+        isThrowable = false;
+        havingBalls = new List<GameObject>();
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -174,9 +187,12 @@ public class PersonAgent : Agent
         banana[0] = Input.GetAxis("Horizontal");
         banana[1] = Input.GetAxis("Vertical");
         // banana[2] = Input.GetAxis("Mouse X");
-        if (Input.GetKeyDown(KeyCode.Space))
+        banana[3] = 0.1f;
+        banana[4] = 0.5f;
+        banana[5] = 0.1f;
+        if (Input.GetKeyDown(KeyCode.Space) && isThrowable)
         {
-            banana2[0] = 1;
+              banana2[0] = 1;
         }
         else
         {

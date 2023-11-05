@@ -6,6 +6,8 @@ public class FieldManager : MonoBehaviour
 {
     public float maxBallsNum,playAreaDiameter,personTall;
     public float _Range = 0.1f;
+    public float gosa = 0.1f;
+    public float multipulV0SpeedNum = 10.0f;
 
     // Start is called before the first frame update
     void Start()
