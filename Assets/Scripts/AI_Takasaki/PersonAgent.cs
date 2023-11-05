@@ -16,7 +16,8 @@ public class PersonAgent : Agent
     Transform nose, target;
     Rigidbody rBody;
     bool isThrowable;
-    List<GameObject> havingBalls = new List<GameObject>();
+    List<GameObject> havingBalls = new();
+    int getBallsNum, goalBallsNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,8 @@ public class PersonAgent : Agent
             }
         }
         havingBalls = new List<GameObject>();
+        getBallsNum = 0;
+        goalBallsNum = 0;
     }
 
     void SetPersonPos()
@@ -62,9 +65,7 @@ public class PersonAgent : Agent
         float px = Mathf.Cos(rad) * radius + center.x;
         float pz = Mathf.Sin(rad) * radius + center.z;
         transform.localScale = new(1f, playerTall, 1f);
-        transform.localPosition = new(px, playerTall / 2, pz);
-        Vector3 banana = target.position;
-        banana.y = transform.position.y;
+        transform.localPosition = new(px, playerTall / 2 + center.y, pz);
         transform.LookAt(target);
         Quaternion banana2 = transform.rotation;
         banana2.x = 0f;
@@ -86,6 +87,7 @@ public class PersonAgent : Agent
         else
         {
             havingBalls.Add(ball);
+            getBallsNum++;
             if(havingBalls.Count == 6)
             {
                 isThrowable = true;
@@ -115,6 +117,28 @@ public class PersonAgent : Agent
         }
 
         // ïÒèVälìæÉ]Å[Éì
+        // É{Å[ÉãÇèEÇ¡ÇΩÇÁ+0.01
+        for (int i = 0; i < getBallsNum; i++)
+        {
+            AddReward(0.01f);
+            getBallsNum--;
+        }
+
+        // ÉSÅ[ÉãÇµÇΩÇÁ+1.0
+        for (int i = 0; i < goalBallsNum; i++)
+        {
+            AddReward(1.0f);
+            goalBallsNum--;
+        }
+
+        //Å@éûä‘Ç™ÇΩÇ¬Ç≤Ç∆Ç…-0.0005
+        AddReward(-0.0005f);
+
+        // óéâ∫ÇµÇƒÇ¢ÇΩÇÁèIóπ
+        if(transform.position.y < fieldManager.transform.position.y - 3)
+        {
+            EndEpisode();
+        }
     }
 
     void Throw(Vector3 firstVelocity)
@@ -178,6 +202,12 @@ public class PersonAgent : Agent
         }
         isThrowable = false;
         havingBalls = new List<GameObject>();
+    }
+
+    public void GoalBall(GameObject ball)
+    {
+        goalBallsNum++;
+        Destroy(ball);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
