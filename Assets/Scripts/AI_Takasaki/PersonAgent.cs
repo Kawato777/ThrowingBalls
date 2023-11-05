@@ -65,7 +65,7 @@ public class PersonAgent : Agent
         float px = Mathf.Cos(rad) * radius + center.x;
         float pz = Mathf.Sin(rad) * radius + center.z;
         transform.localScale = new(1f, playerTall, 1f);
-        transform.localPosition = new(px, playerTall / 2 + center.y, pz);
+        transform.position = new(px, playerTall / 2 + center.y, pz);
         transform.LookAt(target);
         Quaternion banana2 = transform.rotation;
         banana2.x = 0f;

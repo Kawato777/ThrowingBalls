@@ -17,7 +17,9 @@ public class BallManager : MonoBehaviour
         Quaternion randomRot;
         for (int i = 0;i < fieldManager.maxBallsNum; i++)
         {
-            randomPos = new(Random.Range(-fieldManager.playAreaDiameter / 2 + 1, fieldManager.playAreaDiameter / 2 - 1), 0.15f, Random.Range(-fieldManager.playAreaDiameter / 2 + 1, fieldManager.playAreaDiameter / 2 - 1));
+            randomPos = new(Random.Range(-fieldManager.playAreaDiameter / 2 + 1, fieldManager.playAreaDiameter / 2 - 1) + fieldManager.transform.position.x,
+                            fieldManager.transform.position.y + 0.15f,
+                            Random.Range(-fieldManager.playAreaDiameter / 2 + 1, fieldManager.playAreaDiameter / 2 - 1) + fieldManager.transform.position.z);
             randomRot = Quaternion.Euler(Random.Range(0, 360f), Random.Range(0, 360f), Random.Range(0, 360f));
             GameObject _ball = Instantiate(ball, randomPos , randomRot , this.transform);
             _ball.AddComponent<Rigidbody>();
