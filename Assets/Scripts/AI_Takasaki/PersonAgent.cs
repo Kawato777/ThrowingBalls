@@ -13,7 +13,7 @@ public class PersonAgent : Agent
     [SerializeField]
     FieldManager fieldManager;
     [SerializeField]
-    Transform pocket, nose;
+    Transform pocket, nose, target;
     Rigidbody rBody;
     bool isThrowable;
     List<GameObject> havingBalls = new List<GameObject>();
@@ -62,6 +62,13 @@ public class PersonAgent : Agent
         float pz = Mathf.Sin(rad) * radius + center.z;
         transform.localScale = new(1f, playerTall, 1f);
         transform.localPosition = new(px, playerTall / 2, pz);
+        Vector3 banana = target.position;
+        banana.y = transform.position.y;
+        transform.LookAt(target);
+        Quaternion banana2 = transform.rotation;
+        banana2.x = 0f;
+        banana2.z = 0f;
+        transform.localRotation = banana2;
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -82,7 +89,6 @@ public class PersonAgent : Agent
             {
                 isThrowable = true;
             }
-            ball.transform.parent = pocket;
             ball.GetComponent<Collider>().enabled = false;
             ball.GetComponent<Rigidbody>().isKinematic = true;
             ball.SetActive(false);
@@ -112,13 +118,51 @@ public class PersonAgent : Agent
 
     void Throw(Vector3 firstVelocity)
     {
-        foreach(var ball in havingBalls)
+        for (int i = 0; i < havingBalls.Count; i++) 
         {
+            GameObject ball = havingBalls[i];
             ball.SetActive(true);
+            ball.transform.position = new(nose.position.x, nose.position.y + 0.3f, nose.position.z);
             Quaternion quaternion = Quaternion.identity;
-            ball.transform.localRotation = quaternion;
-            ball.transform.position = new(nose.position.x, nose.position.y + 0.2f, nose.position.z);
-            
+            Vector3 planeNormal = Vector3.up;
+            var signedAngle = Vector3.SignedAngle(Vector3.ProjectOnPlane(ball.transform.forward.normalized, planeNormal), Vector3.ProjectOnPlane(nose.forward.normalized, planeNormal), planeNormal);
+            quaternion.eulerAngles = new(90f, signedAngle, 0f);
+            ball.transform.rotation = quaternion;
+            Vector3 pos = ball.transform.position;
+            switch (i)
+            {
+                case 0:
+                    pos += -ball.transform.right.normalized * 0.025f;
+                    break;
+                case 1: 
+                    pos += ball.transform.right.normalized * 0.025f;
+                    break; 
+                case 2:
+                    ball.transform.Rotate(new(0f, 0f, 90f));
+                    pos.y += 0.05f;
+                    pos += -ball.transform.right.normalized * 0.025f;
+                    break;
+                case 3:
+                    ball.transform.Rotate(new(0f, 0f, 90f));
+                    pos.y += 0.05f;
+                    pos += ball.transform.right.normalized * 0.025f;
+                    break;
+                case 4:
+                    pos.y += 0.1f;
+                    pos += -ball.transform.right.normalized * 0.025f;
+                    break;
+                case 5:
+                    pos.y += 0.1f;
+                    pos += ball.transform.right.normalized * 0.025f;
+                    break;
+                default:
+                    Debug.Log("‹ÊŽ‚¿‚·‚¬B");
+                    break;
+            }
+            ball.transform.position = pos;
+            //Vector3 banana = nose.transform.forward;
+            //ball.transform.LookAt(banana, Vector3.up);
+            ball.transform.lossyScale.Set(10f, 10f, 10f);
             // ballManager.SetBallParent(ball);
         }
     }
@@ -129,7 +173,7 @@ public class PersonAgent : Agent
         var banana2 = actionsOut.DiscreteActions;
         banana[0] = Input.GetAxis("Horizontal");
         banana[1] = Input.GetAxis("Vertical");
-        banana[2] = Input.GetAxis("Mouse X");
+        // banana[2] = Input.GetAxis("Mouse X");
         if (Input.GetKeyDown(KeyCode.Space))
         {
             banana2[0] = 1;

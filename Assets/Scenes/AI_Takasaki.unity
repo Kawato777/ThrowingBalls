@@ -1220,6 +1220,7 @@ MonoBehaviour:
   fieldManager: {fileID: 8143228217505392375}
   pocket: {fileID: 272407265}
   nose: {fileID: 275296427}
+  target: {fileID: 7607830202517899682}
 --- !u!114 &8710318208495610673
 MonoBehaviour:
   m_ObjectHideFlags: 0
