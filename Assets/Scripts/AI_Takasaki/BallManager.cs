@@ -33,10 +33,13 @@ public class BallManager : MonoBehaviour
             return;
         }
 
-        GameObject[] balls = GetComponentsInChildren<GameObject>();
-        foreach (GameObject t in balls)
+        Transform[] balls = GetComponentsInChildren<Transform>();
+        foreach (Transform t in balls)
         {
-            Destroy(t);
+            if(t != transform)
+            {
+                Destroy(t.gameObject);
+            }
         }
     }
 
