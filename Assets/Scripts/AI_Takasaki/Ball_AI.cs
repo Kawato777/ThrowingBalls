@@ -14,7 +14,11 @@ public class Ball_AI : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 空気抵抗（-kv）
-        rb.AddForce(-airResistantNum * GetComponent<Rigidbody>().velocity);
+        // 空気抵抗（-kv^2）
+        Vector3 vPow = rb.velocity;
+        vPow.x = Mathf.Pow(vPow.x, 2);
+        vPow.y = Mathf.Pow(vPow.y, 2);
+        vPow.z = Mathf.Pow(vPow.z, 2);
+        rb.AddForce(-airResistantNum * vPow);
     }
 }
