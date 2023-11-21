@@ -17,7 +17,15 @@ public class PersonAgent : Agent
     Rigidbody rBody;
     bool isThrowable;
     List<GameObject> havingBalls = new();
-    int getBallsNum, goalBallsNum;
+    int getBallsNum, goalBallsNum, highBallsNum;
+
+    // 環境パラメータ
+    float getBallReward; // 玉を得たときの報酬
+    float goalReward; // 玉がかごに入った時の報酬
+    float ballAngleReward; // 玉を投げる角度の報酬（高さは別で）
+    float ballHighReward; // 玉の高さの報酬（一定の高さを超えたら）
+    float stepReward; // ステップ毎のペナルティ
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +60,14 @@ public class PersonAgent : Agent
         havingBalls = new List<GameObject>();
         getBallsNum = 0;
         goalBallsNum = 0;
+
+        // 環境パラメータの設定
+        EnvironmentParameters envParams = Academy.Instance.EnvironmentParameters;
+        getBallReward = envParams.GetWithDefault("getball_reward", 0.01f);
+        goalReward = envParams.GetWithDefault("goal_reward", 0.0f);
+        ballAngleReward = envParams.GetWithDefault("ballangle_reward",0.0f);
+        ballHighReward = envParams.GetWithDefault("ballhigh_reward", 0.0f);
+        stepReward = envParams.GetWithDefault("step_reward", 0.0f);
     }
 
     void SetPersonPos()
@@ -120,25 +136,37 @@ public class PersonAgent : Agent
         // ボールを拾ったら+0.01
         for (int i = 0; i < getBallsNum; i++)
         {
-            AddReward(0.01f);
+            AddReward(getBallReward);
             getBallsNum--;
         }
 
         // ゴールしたら+1.0
         for (int i = 0; i < goalBallsNum; i++)
         {
-            AddReward(1.0f);
+            AddReward(goalReward);
             goalBallsNum--;
         }
 
+        // 4.2m超えた球の数+0.05
+        for (int i = 0; i < highBallsNum; i++)
+        {
+            AddReward(ballHighReward);
+            highBallsNum--;
+        }
+
         //　時間がたつごとに-0.0005
-        AddReward(-0.0005f);
+        AddReward(stepReward);
 
         // 落下していたら終了
         if(transform.position.y < fieldManager.transform.position.y - 3)
         {
             EndEpisode();
         }
+    }
+
+    public void CountHighBall()
+    {
+        highBallsNum++;
     }
 
     void Throw(Vector3 firstVelocity)

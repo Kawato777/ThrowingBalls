@@ -10,6 +10,8 @@ public class BallManager : MonoBehaviour
     Transform ground;
     [SerializeField]
     FieldManager fieldManager;
+    [SerializeField]
+    PersonAgent personAgent;
 
     public void CreateBalls()
     {
@@ -43,6 +45,11 @@ public class BallManager : MonoBehaviour
                 Destroy(t.gameObject);
             }
         }
+    }
+
+    public void CountHighBall()
+    {
+        personAgent.CountHighBall();
     }
 
     // Start is called before the first frame update

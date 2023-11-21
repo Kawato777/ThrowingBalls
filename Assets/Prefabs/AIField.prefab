@@ -236,6 +236,7 @@ MonoBehaviour:
   ball: {fileID: 4956400286677546476, guid: 831e40afeec982844a1ea0b0fcc3efe3, type: 3}
   ground: {fileID: 3590967734027036771}
   fieldManager: {fileID: 4450393245319086166}
+  personAgent: {fileID: 579776722268390584}
 --- !u!1 &1476684399679887419
 GameObject:
   m_ObjectHideFlags: 0
