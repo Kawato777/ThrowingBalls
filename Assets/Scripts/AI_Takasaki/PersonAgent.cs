@@ -18,6 +18,7 @@ public class PersonAgent : Agent
     bool isThrowable;
     List<GameObject> havingBalls = new();
     int getBallsNum, goalBallsNum, highBallsNum;
+    List<float> throwAngles = new();
 
     // ŠÂ‹«ƒpƒ‰ƒ[ƒ^
     float getBallReward; // ‹Ê‚ğ“¾‚½‚Æ‚«‚Ì•ñV
@@ -154,6 +155,14 @@ public class PersonAgent : Agent
             highBallsNum--;
         }
 
+        // “Š‚°‚½Šp“x‚É‚æ‚é•ñV
+        foreach(float item in throwAngles)
+        {
+            float reward = (item - 90) / -900 * ballAngleReward;
+            AddReward(reward);
+        }
+        throwAngles = new();
+
         //@ŠÔ‚ª‚½‚Â‚²‚Æ‚É-0.0005
         AddReward(stepReward);
 
@@ -171,6 +180,11 @@ public class PersonAgent : Agent
 
     void Throw(Vector3 firstVelocity)
     {
+        if(havingBalls.Count == 0)
+        {
+            return;
+        }
+
         // ‹Ê‚ğÏ‚Ş
         for (int i = 0; i < havingBalls.Count; i++) 
         {
@@ -221,6 +235,16 @@ public class PersonAgent : Agent
         firstVelocity = new(firstVelocity.x * Random.Range(1 - fieldManager.gosa, 1 + fieldManager.gosa), 
                             firstVelocity.y * Random.Range(1 - fieldManager.gosa, 1 + fieldManager.gosa), 
                             firstVelocity.z * Random.Range(1 - fieldManager.gosa, 1 + fieldManager.gosa));
+
+        // “Š“IŠp“x‚©‚ç•ñVŒvZ
+        Vector3 firstVelocityXZ = Vector3.ProjectOnPlane(firstVelocity, Vector3.up);
+        Vector3 toTargetXZ = Vector3.ProjectOnPlane(target.position - transform.position, Vector3.up);
+        float angle_fromTargetToV0 = Vector3.Angle(toTargetXZ, firstVelocityXZ); // 0 ~ 180
+
+        // Debug.Log(angle_fromTargetToV0);
+
+        throwAngles.Add(angle_fromTargetToV0);
+
         foreach (var ball in havingBalls)
         {
             ball.GetComponent<Collider>().enabled = true;

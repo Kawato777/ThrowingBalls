@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -239,6 +243,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -301,6 +309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -361,6 +373,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -423,6 +439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -483,6 +503,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -545,6 +569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -605,6 +633,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -667,6 +699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -728,6 +764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -788,6 +828,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -944,6 +988,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1004,6 +1052,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1066,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1127,6 +1183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1187,6 +1247,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1341,6 +1405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1401,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1463,6 +1535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1523,6 +1599,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1585,6 +1665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1645,6 +1729,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1707,6 +1795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1767,6 +1859,10 @@ PrefabInstance:
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
       value: AIField (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1829,6 +1925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1890,6 +1990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIField (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1946,6 +2050,10 @@ PrefabInstance:
     - target: {fileID: 2108590421357143468, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2397249913083465513, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
+      propertyPath: m_Model
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7384382941160437406, guid: 0b64abd3eaf45184d864fe2b71a818d0, type: 3}
       propertyPath: m_Name
