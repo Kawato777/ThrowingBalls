@@ -129,12 +129,18 @@ public class PersonAgent : Agent
         switch (lessonNum)
         {
             case 0:
-                // ボールを拾ったら+0.01
+                // ボールを拾ったら+0.1
                 for (int i = 0; i < getBallsNum; i++)
                 {
-                    AddReward(0.01f);
+                    AddReward(0.1f);
                     getBallsNum--;
                 }
+                // 投げたら＋0.3
+                for (int i = 0; i < throwAngles.Count; i++)
+                {
+                    AddReward(0.3f);
+                }
+                throwAngles = new();
                 break;
             case 1:
                 AddReward_GoalAndAngleAndHigh();
