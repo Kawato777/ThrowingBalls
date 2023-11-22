@@ -135,12 +135,6 @@ public class PersonAgent : Agent
                     AddReward(0.1f);
                     getBallsNum--;
                 }
-                // “Š‚°‚½‚ç{0.3
-                for (int i = 0; i < throwAngles.Count; i++)
-                {
-                    AddReward(0.3f);
-                }
-                throwAngles = new();
                 break;
             case 1:
                 AddReward_GoalAndAngleAndHigh();
