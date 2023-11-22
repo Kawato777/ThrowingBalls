@@ -132,7 +132,7 @@ public class PersonAgent : Agent
                 // ƒ{[ƒ‹‚ğE‚Á‚½‚ç+0.1
                 for (int i = 0; i < getBallsNum; i++)
                 {
-                    AddReward(0.1f);
+                    AddReward(0.01f);
                     getBallsNum--;
                 }
                 break;
