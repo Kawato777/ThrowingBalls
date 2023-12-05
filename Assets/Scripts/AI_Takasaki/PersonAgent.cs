@@ -17,7 +17,7 @@ public class PersonAgent : Agent
     Rigidbody rBody;
     bool isThrowable;
     List<GameObject> havingBalls = new();
-    int getBallsNum, goalBallsNum, highBallsNum;
+    int getBallsNum, goalBallsNum, inBallsNum;
     List<float> throwAngles = new();
 
     // 環境パラメータ
@@ -129,10 +129,10 @@ public class PersonAgent : Agent
         switch (lessonNum)
         {
             case 0:
-                // ボールを拾ったら+0.1
+                // ボールを拾ったら+0.05
                 for (int i = 0; i < getBallsNum; i++)
                 {
-                    AddReward(0.01f);
+                    AddReward(0.05f);
                     getBallsNum--;
                 }
                 break;
@@ -151,13 +151,14 @@ public class PersonAgent : Agent
         // 落下していたら終了
         if(transform.position.y < fieldManager.transform.position.y - 3)
         {
+            AddReward(-1.0f);
             EndEpisode();
         }
     }
 
-    public void CountHighBall()
+    public void CountInBall()
     {
-        highBallsNum++;
+        inBallsNum++;
     }
 
     void AddReward_GoalAndAngleAndHigh()
@@ -172,16 +173,16 @@ public class PersonAgent : Agent
         // 投げた角度による報酬
         foreach (float item in throwAngles)
         {
-            float reward = (item - 90) / -900;
+            float reward = (item - 90) / -900 * 2 ;
             AddReward(reward);
         }
         throwAngles = new();
 
-        // 4.2m超えた球の数+0.05
-        for (int i = 0; i < highBallsNum; i++)
+        // TargetAreaに玉が入った数だけ+0.2
+        for (int i = 0; i < inBallsNum; i++)
         {
-            AddReward(0.05f);
-            highBallsNum--;
+            AddReward(0.1f);
+            inBallsNum--;
         }
     }
 
