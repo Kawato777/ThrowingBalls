@@ -24,9 +24,9 @@ public class BallController : MonoBehaviour
     private GameObject m_shootObject = null;
     private float GosaNum = 0.1f;
     [SerializeField]
-    float limidSpeed = 6.84f;
-    [SerializeField]
-    float initialSpeed = 6.84f;
+    float limitSpeed = 6.84f;
+    //[SerializeField]
+    //float initialSpeed = 6.84f;
 
     public void SetGosaNum(float gosaNum)
     {
@@ -82,10 +82,18 @@ public class BallController : MonoBehaviour
 
         // float speed = initialSpeed;
 
-        if (float.IsNaN(speed) || speed >= limidSpeed)
+
+         
+        if (float.IsNaN(speed))
         {
             // 条件を満たす初速を算出できなければVector3.zeroを返す
             Debug.LogError("初速計算不能");
+            return Vector3.zero;
+        }
+        else if (speed >= limitSpeed)
+        {
+            // 条件を満たす初速を算出できなければVector3.zeroを返す
+            Debug.LogError("limitspeedを超えたためエラー");
             return Vector3.zero;
         }
         else
