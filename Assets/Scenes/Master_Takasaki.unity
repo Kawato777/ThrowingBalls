@@ -833,9 +833,9 @@ MonoBehaviour:
   throwTimes: 3
   shootAngle: 65
   distance: 1
-  personTall: 1.6
+  personTall: 1.7
   person: {fileID: 5274762731400206250}
-  GosaNum: 1
+  GosaNum: 0.5
   isAirResistant: 0
 --- !u!4 &1576172382384127311
 Transform:
