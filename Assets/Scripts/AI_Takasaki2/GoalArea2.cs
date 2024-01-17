@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GoalArea2 : MonoBehaviour
 {
+    [SerializeField]
+    FieldManager2 fieldManager;
     // Start is called before the first frame update
     void Start()
     {
