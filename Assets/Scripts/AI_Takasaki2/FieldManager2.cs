@@ -59,8 +59,7 @@ public class FieldManager2 : MonoBehaviour
         m_ResetTimer++;
         if(m_ResetTimer >= MaxEnvironmentSteps && MaxEnvironmentSteps > 0)
         {
-            agentGroup.GroupEpisodeInterrupted();
-            ResetScene();
+            EndEpisode();
         }
         agentGroup.AddGroupReward(-1 / MaxEnvironmentSteps);
     }
@@ -68,6 +67,12 @@ public class FieldManager2 : MonoBehaviour
     public void Goal()
     {
         agentGroup.AddGroupReward(0.05f);
+    }
+
+    public void EndEpisode()
+    {
+        agentGroup.GroupEpisodeInterrupted();
+        ResetScene();
     }
 
     void ResetScene()

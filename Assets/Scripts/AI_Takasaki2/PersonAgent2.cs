@@ -15,6 +15,8 @@ public class PersonAgent2 : Agent
     Rigidbody personShape_rb;
     [SerializeField]
     FieldManager2 fieldManager;
+    [SerializeField]
+    bool isHeuristic = false;
 
     public void TakeBallToPocket(GameObject ball)
     {
@@ -91,6 +93,13 @@ public class PersonAgent2 : Agent
         {
             Pass(actions.DiscreteActions[1]);
         }
+
+        // •ñVƒ][ƒ“
+        if(personShape.transform.position.y < fieldManager.transform.position.y - 5)
+        {
+            AddReward(-1.0f);
+            fieldManager.EndEpisode();
+        }
     }
 
     void Pass(int personNum)
@@ -117,7 +126,11 @@ public class PersonAgent2 : Agent
 
     public override void Heuristic(in ActionBuffers actionsOut)
     {
+        if (isHeuristic)
+        {
+            var banana0 = actionsOut.ContinuousActions;
+            banana0[0] = Input.GetAxis("Horizontal");
+            banana0[1] = Input.GetAxis("Vertical");
+        }
     }
-
-    
 }

@@ -8,17 +8,17 @@ public class SurroundSensor2 : MonoBehaviour
     PersonAgent2 agent;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && other.gameObject != agent.personShape.gameObject)
+        if(other.CompareTag("Body") && other.gameObject != agent.personShape.gameObject)
         {
-            agent.SetPassablePerson(other.gameObject.GetComponent<PersonAgent2>(), false);
+            agent.SetPassablePerson(other.gameObject.GetComponent<PersonBody>().agent, false);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && other.gameObject != agent.personShape.gameObject)
+        if (other.CompareTag("Body") && other.gameObject != agent.personShape.gameObject)
         {
-            agent.SetPassablePerson(other.gameObject.GetComponent<PersonAgent2>(), true);
+            agent.SetPassablePerson(other.gameObject.GetComponent<PersonBody>().agent, true);
         }
     }
     // Start is called before the first frame update
