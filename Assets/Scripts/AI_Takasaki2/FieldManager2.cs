@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Unity.MLAgents;
 using UnityEngine;
 
@@ -32,11 +33,21 @@ public class FieldManager2 : MonoBehaviour
     void Start()
     {
         agentGroup = new SimpleMultiAgentGroup();
+        int i = 0;
         foreach (PlayerInfo info in PlayerInfos)
         {
-            info.StartingPos = info.Agent.personShape.transform.position;
+            Vector3 startPos = transform.position;
+            float startAngle = 24 * i * Mathf.Deg2Rad;   //24ìxÅ~iî‘ñ⁄=äpìx
+            startPos.x += playAreaDiameter / 2 * Mathf.Cos(startAngle);
+            startPos.z += playAreaDiameter / 2 * Mathf.Sin(startAngle);
+            startPos.y += personTall / 2;
+            info.StartingPos = startPos;
+            Vector3 scale = info.Agent.personShape.transform.localScale;
+            scale.y = personTall;
+            info.Agent.personShape.transform.localScale = scale;
             info.Rb = info.Agent.personShape.GetComponent<Rigidbody>();
             agentGroup.RegisterAgent(info.Agent);
+            i++;
         }
         ResetScene();
     }
@@ -62,9 +73,9 @@ public class FieldManager2 : MonoBehaviour
 
         foreach(PlayerInfo info in PlayerInfos)
         {
-            info.Agent.personShape.transform.position = info.StartingPos;
             info.Rb.velocity = Vector3.zero;
             info.Rb.angularVelocity = Vector3.zero;
+            info.Agent.personShape.transform.position = info.StartingPos;
         }
 
         ballManager.ResetBall();
