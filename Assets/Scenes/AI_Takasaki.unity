@@ -1620,6 +1620,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
     - target: {fileID: 2407754410553449172, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
+      propertyPath: isHeuristic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2407754410553449172, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
       propertyPath: fieldManager
       value: 
       objectReference: {fileID: 8580368710878234266}

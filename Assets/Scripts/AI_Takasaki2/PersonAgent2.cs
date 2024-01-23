@@ -89,7 +89,7 @@ public class PersonAgent2 : Agent
         {
             Throw();
         }
-        else if (actions.DiscreteActions[1] >= 1)
+        else if (actions.DiscreteActions[1] >= 1 && ballPocket.Count >= 1)
         {
             Pass(actions.DiscreteActions[1]);
         }
@@ -104,6 +104,19 @@ public class PersonAgent2 : Agent
 
     void Pass(int personNum)
     {
+        PersonAgent2 partnerAgent = fieldManager.PersonInfos[personNum].Agent;
+        if(partnerAgent.ballPocket.Count < 6)
+        {
+            foreach(var obj in ballPocket)
+            {
+                partnerAgent.ballPocket.Add(obj);
+                ballPocket.Remove(obj);
+                if(partnerAgent.ballPocket.Count == 6)
+                {
+                    return;
+                }
+            }
+        }
     }
 
     void Throw()
