@@ -60,6 +60,7 @@ public class FieldManager2 : MonoBehaviour
             agentGroup.GroupEpisodeInterrupted();
             ResetScene();
         }
+        agentGroup.AddGroupReward(-1 / MaxEnvironmentSteps);
     }
 
     public void Goal()

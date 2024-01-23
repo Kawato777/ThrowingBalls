@@ -9,19 +9,45 @@ using Unity.MLAgents.Policies;
 public class PersonAgent2 : Agent
 {
     public GameObject personShape;
+    List<GameObject> ballPocket = new List<GameObject>();
+    List<GameObject> passablePersons = new List<GameObject>();
+    bool throwable = false;
+    bool passable = false;
 
-    // Start is called before the first frame update
-    void Start()
+    public void TakeBallToPocket(GameObject ball)
     {
+        if(ballPocket.Count >= 6)
+        {
+            return;
+        }
 
+        passable = true;
+        ballPocket.Add(ball);
+        
+        if(ballPocket.Count == 6)
+        {
+            throwable = true;
+        }
+
+        Rigidbody rb = ball.GetComponent<Rigidbody>();
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
+        ball.GetComponent<Collider>().enabled = false;
+        ball.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetPassablePerson(GameObject person,bool isRemoved)
     {
-
+        if (isRemoved) // îÕàÕÇ©ÇÁèoÇÈ
+        {
+            passablePersons.Remove(person);
+        }
+        else // îÕàÕÇ…ì¸ÇÈ
+        {
+            passablePersons.Add(person);
+        }
     }
-
 
     public override void Initialize()
     {
@@ -46,4 +72,6 @@ public class PersonAgent2 : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
     }
+
+    
 }

@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773054f69cd5e4b44bf6e4edd81ce550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 2407754410553449172}
 --- !u!1 &7378014682968324411
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a133907d6c7cfb4f9ad53bf1db20f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agent: {fileID: 2407754410553449172}
 --- !u!1 &8290624201868673904
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +316,7 @@ GameObject:
   - component: {fileID: 760675693394482679}
   - component: {fileID: 2407754410553449172}
   - component: {fileID: 3651413912320338641}
+  - component: {fileID: 6356948079731890579}
   m_Layer: 0
   m_Name: Person2
   m_TagString: Untagged
@@ -417,6 +420,20 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_CompressionType: 1
   m_ObservationStacks: 1
+--- !u!114 &6356948079731890579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8290624201868673904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DecisionPeriod: 5
+  TakeActionsBetweenDecisions: 1
 --- !u!1 &8434785790085931185
 GameObject:
   m_ObjectHideFlags: 0

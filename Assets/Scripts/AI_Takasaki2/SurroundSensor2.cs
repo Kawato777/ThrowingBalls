@@ -4,6 +4,23 @@ using UnityEngine;
 
 public class SurroundSensor2 : MonoBehaviour
 {
+    [SerializeField]
+    PersonAgent2 agent;
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player") && other.gameObject != agent.personShape.gameObject)
+        {
+            agent.SetPassablePerson(other.gameObject, false);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && other.gameObject != agent.personShape.gameObject)
+        {
+            agent.SetPassablePerson(other.gameObject, true);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
