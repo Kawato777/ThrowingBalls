@@ -10,7 +10,7 @@ public class SurroundSensor2 : MonoBehaviour
     {
         if(other.CompareTag("Player") && other.gameObject != agent.personShape.gameObject)
         {
-            agent.SetPassablePerson(other.gameObject, false);
+            agent.SetPassablePerson(other.gameObject.GetComponent<PersonAgent2>(), false);
         }
     }
 
@@ -18,7 +18,7 @@ public class SurroundSensor2 : MonoBehaviour
     {
         if (other.CompareTag("Player") && other.gameObject != agent.personShape.gameObject)
         {
-            agent.SetPassablePerson(other.gameObject, true);
+            agent.SetPassablePerson(other.gameObject.GetComponent<PersonAgent2>(), true);
         }
     }
     // Start is called before the first frame update

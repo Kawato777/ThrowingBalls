@@ -10,9 +10,11 @@ public class PersonAgent2 : Agent
 {
     public GameObject personShape;
     List<GameObject> ballPocket = new List<GameObject>();
-    List<GameObject> passablePersons = new List<GameObject>();
+    List<PersonAgent2> passablePersons = new List<PersonAgent2>();
     bool throwable = false;
-    bool passable = false;
+    Rigidbody personShape_rb;
+    [SerializeField]
+    FieldManager2 fieldManager;
 
     public void TakeBallToPocket(GameObject ball)
     {
@@ -21,9 +23,10 @@ public class PersonAgent2 : Agent
             return;
         }
 
-        passable = true;
         ballPocket.Add(ball);
-        
+
+        AddReward(0.01f);   // ボールをゲットしたら+0.01
+
         if(ballPocket.Count == 6)
         {
             throwable = true;
@@ -37,7 +40,7 @@ public class PersonAgent2 : Agent
         ball.SetActive(false);
     }
 
-    public void SetPassablePerson(GameObject person,bool isRemoved)
+    public void SetPassablePerson(PersonAgent2 person,bool isRemoved)
     {
         if (isRemoved) // 範囲から出る
         {
@@ -51,22 +54,65 @@ public class PersonAgent2 : Agent
 
     public override void Initialize()
     {
+        personShape_rb = personShape.GetComponent<Rigidbody>();
     }
 
     public override void OnEpisodeBegin()
     {
+        throwable = false;
+        if(ballPocket.Count > 0)
+        {
+            foreach (GameObject ball in ballPocket)
+            {
+                Destroy(ball);
+            }
+            ballPocket = new List<GameObject>();
+        }
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
+        sensor.AddObservation(ballPocket.Count);
     }
 
     public override void OnActionReceived(ActionBuffers actions)
     {
+        // 行動ゾーン
+        Vector3 controlSignal = Vector3.zero;
+        controlSignal.x = actions.ContinuousActions[0];
+        controlSignal.z = actions.ContinuousActions[1];
+        personShape_rb.AddForce(controlSignal * 10);
+
+        if (actions.DiscreteActions[0] == 1)
+        {
+            Throw();
+        }
+        else if (actions.DiscreteActions[1] >= 1)
+        {
+            Pass(actions.DiscreteActions[1]);
+        }
+    }
+
+    void Pass(int personNum)
+    {
+    }
+
+    void Throw()
+    {
+        throwable = false;
     }
 
     public override void WriteDiscreteActionMask(IDiscreteActionMask actionMask)
     {
+        actionMask.SetActionEnabled(0, 1, throwable);
+        for(int i = 1;i <= 15; i++)
+        {
+            actionMask.SetActionEnabled(1, i, false);
+        }
+        foreach(var person in passablePersons)
+        {
+            actionMask.SetActionEnabled(1,fieldManager.GetPersonNum(person) + 1, true);
+        }
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)

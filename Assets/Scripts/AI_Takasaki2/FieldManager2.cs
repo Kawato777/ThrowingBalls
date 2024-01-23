@@ -18,7 +18,8 @@ public class FieldManager2 : MonoBehaviour
 
     [Tooltip("Max Environment Steps")] public int MaxEnvironmentSteps = 30000;
 
-    public List<PlayerInfo> PlayerInfos;
+    public List<PlayerInfo> PersonInfos;
+    List<PersonAgent2> personAgents = new List<PersonAgent2>();
 
     SimpleMultiAgentGroup agentGroup;
 
@@ -34,8 +35,9 @@ public class FieldManager2 : MonoBehaviour
     {
         agentGroup = new SimpleMultiAgentGroup();
         int i = 0;
-        foreach (PlayerInfo info in PlayerInfos)
+        foreach (PlayerInfo info in PersonInfos)
         {
+            personAgents.Add(info.Agent);
             Vector3 startPos = transform.position;
             float startAngle = 24 * i * Mathf.Deg2Rad;   //24ìxÅ~iî‘ñ⁄=äpìx
             startPos.x += playAreaDiameter / 2 * Mathf.Cos(startAngle);
@@ -72,7 +74,7 @@ public class FieldManager2 : MonoBehaviour
     {
         m_ResetTimer = 0;
 
-        foreach(PlayerInfo info in PlayerInfos)
+        foreach(PlayerInfo info in PersonInfos)
         {
             info.Rb.velocity = Vector3.zero;
             info.Rb.angularVelocity = Vector3.zero;
@@ -80,5 +82,10 @@ public class FieldManager2 : MonoBehaviour
         }
 
         ballManager.ResetBall();
+    }
+
+    public int GetPersonNum(PersonAgent2 person)
+    {
+        return personAgents.IndexOf(person);
     }
 }
