@@ -5,6 +5,7 @@ using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Policies;
+using Unity.VisualScripting;
 
 public class PersonAgent2 : Agent
 {
@@ -17,6 +18,8 @@ public class PersonAgent2 : Agent
     FieldManager2 fieldManager;
     [SerializeField]
     bool isHeuristic = false;
+    [SerializeField]
+    Transform headTF;
 
     public void TakeBallToPocket(GameObject ball)
     {
@@ -122,6 +125,86 @@ public class PersonAgent2 : Agent
     void Throw()
     {
         throwable = false;
+        Debug.Log("Throw");
+        // 玉を積む
+        for (int i = 0; i < ballPocket.Count; i++)
+        {
+            GameObject ball = ballPocket[i];
+            ball.SetActive(true);
+            Vector3 headPos = headTF.position;
+            headPos.y += 0.5f;
+            ball.transform.position = headPos;
+            Vector3 target = fieldManager.goalTF.transform.position;
+            target.y = this.transform.position.y;
+            ball.transform.LookAt(target);
+
+            Vector3 pos = ball.transform.position;
+            switch (i)
+            {
+                case 0:
+                    pos += -ball.transform.right.normalized * 0.025f;
+                    break;
+                case 1:
+                    pos += ball.transform.right.normalized * 0.025f;
+                    break;
+                case 2:
+                    ball.transform.Rotate(new(0f, 0f, 90f));
+                    pos.y += 0.075f;
+                    pos += -ball.transform.right.normalized * 0.025f;
+                    break;
+                case 3:
+                    ball.transform.Rotate(new(0f, 0f, 90f));
+                    pos.y += 0.075f;
+                    pos += ball.transform.right.normalized * 0.025f;
+                    break;
+                case 4:
+                    pos.y += 0.15f;
+                    pos += -ball.transform.right.normalized * 0.025f;
+                    break;
+                case 5:
+                    pos.y += 0.15f;
+                    pos += ball.transform.right.normalized * 0.025f;
+                    break;
+                default:
+                    Debug.Log("玉持ちすぎ。");
+                    break;
+            }
+            ball.transform.position = pos;
+            ball.transform.lossyScale.Set(10f, 10f, 10f);
+        }
+
+        // 玉投げ
+        Vector3 velocity = Vector3.zero;
+        Vector3 startPoint = headTF.position;
+        startPoint.y += 0.5f;
+    }
+
+    private Vector3 CalculateVelocity(Vector3 pointA, Vector3 pointB, float angle)
+    {
+        // 射出角をラジアンに変換
+        float rad = angle * Mathf.PI / 180;
+
+        // 水平方向の距離x
+        float x = Vector2.Distance(new Vector2(pointA.x, pointA.z), new Vector2(pointB.x, pointB.z));
+
+        // 垂直方向の距離y
+        float y = pointA.y - pointB.y;
+
+        // 斜方投射の公式を初速度について解く
+        float speed = Mathf.Sqrt(-Physics.gravity.y * Mathf.Pow(x, 2) / (2 * Mathf.Pow(Mathf.Cos(rad), 2) * (x * Mathf.Tan(rad) + y)));
+
+        // float speed = initialSpeed;
+
+        if (float.IsNaN(speed) || speed >= 10.0f)
+        {
+            // 条件を満たす初速を算出できなければVector3.zeroを返す
+            Debug.LogError("初速計算不能");
+            return Vector3.zero;
+        }
+        else
+        {
+            return new Vector3(pointB.x - pointA.x, x * Mathf.Tan(rad), pointB.z - pointA.z).normalized * speed;
+        }
     }
 
     public override void WriteDiscreteActionMask(IDiscreteActionMask actionMask)
@@ -144,6 +227,14 @@ public class PersonAgent2 : Agent
             var banana0 = actionsOut.ContinuousActions;
             banana0[0] = Input.GetAxis("Horizontal");
             banana0[1] = Input.GetAxis("Vertical");
+            var banana1 = actionsOut.DiscreteActions;
+            if (Input.GetKeyDown(KeyCode.Space) && throwable){
+                banana1[0] = 1;
+            }
+            else
+            {
+                banana1[0] = 0;
+            }
         }
     }
 }

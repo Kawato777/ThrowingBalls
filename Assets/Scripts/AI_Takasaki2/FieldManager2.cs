@@ -29,6 +29,7 @@ public class FieldManager2 : MonoBehaviour
 
     public float playAreaDiameter, personTall,maxBallsNum;
     public float gosa = 0.5f;
+    public Transform goalTF;
 
     // Start is called before the first frame update
     void Start()

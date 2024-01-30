@@ -404,6 +404,7 @@ MonoBehaviour:
   personShape: {fileID: 1712508037869206587}
   fieldManager: {fileID: 0}
   isHeuristic: 0
+  headTF: {fileID: 9156256612894007473}
 --- !u!114 &3651413912320338641
 MonoBehaviour:
   m_ObjectHideFlags: 0
