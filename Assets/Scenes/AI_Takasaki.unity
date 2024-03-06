@@ -2022,7 +2022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3028077859957607318}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0475, y: 3.952, z: -0.0059}
+  m_LocalPosition: {x: -0.0475, y: 4.196, z: -0.0059}
   m_LocalScale: {x: 0.24992096, y: 0.1, z: 0.22728384}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2194,5 +2194,6 @@ MonoBehaviour:
   playAreaDiameter: 7
   personTall: 1.7
   maxBallsNum: 150
-  gosa: 0.5
+  gosa: 0.1
   goalTF: {fileID: 5396409779850434635}
+  height: 4.5
