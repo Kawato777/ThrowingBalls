@@ -39,9 +39,10 @@ public class FieldManager2 : MonoBehaviour
         int i = 0;
         foreach (PlayerInfo info in PersonInfos)
         {
+            Debug.Log(PersonInfos.Count);
             personAgents.Add(info.Agent);
             Vector3 startPos = transform.position;
-            float startAngle = 24 * i * Mathf.Deg2Rad;   //24ìxÅ~iî‘ñ⁄=äpìx
+            float startAngle = 360/PersonInfos.Count * i * Mathf.Deg2Rad;   //24ìxÅ~iî‘ñ⁄=äpìx
             startPos.x += playAreaDiameter / 2 * Mathf.Cos(startAngle);
             startPos.z += playAreaDiameter / 2 * Mathf.Sin(startAngle);
             startPos.y += personTall / 2;
