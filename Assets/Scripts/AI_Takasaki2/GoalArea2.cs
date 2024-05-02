@@ -8,7 +8,7 @@ public class GoalArea2 : MonoBehaviour
     FieldManager2 fieldManager;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("‚È‚ñ‚©—ˆ‚½");
+        // Debug.Log("‚È‚ñ‚©—ˆ‚½");
         if (other.CompareTag("Ball"))
         {
             fieldManager.Goal();

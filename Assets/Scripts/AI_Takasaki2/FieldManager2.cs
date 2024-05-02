@@ -39,7 +39,7 @@ public class FieldManager2 : MonoBehaviour
         int i = 0;
         foreach (PlayerInfo info in PersonInfos)
         {
-            Debug.Log(PersonInfos.Count);
+            // Debug.Log(PersonInfos.Count);
             personAgents.Add(info.Agent);
             Vector3 startPos = transform.position;
             float startAngle = 360/PersonInfos.Count * i * Mathf.Deg2Rad;   //24ìxÅ~iî‘ñ⁄=äpìx
