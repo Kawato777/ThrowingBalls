@@ -20,6 +20,12 @@ public class PersonAgent2 : Agent
     bool isHeuristic = false;
     [SerializeField]
     Transform headTF;
+    [SerializeField]
+    bool isLightLearning = false;
+    [SerializeField]
+    BallManager2 ballManager;
+
+    BufferSensorComponent bufferSensor;
 
     public void TakeBallToPocket(GameObject ball)
     {
@@ -60,6 +66,7 @@ public class PersonAgent2 : Agent
     public override void Initialize()
     {
         personShape_rb = personShape.GetComponent<Rigidbody>();
+        bufferSensor = GetComponent<BufferSensorComponent>();
     }
 
     public override void OnEpisodeBegin()
@@ -78,6 +85,23 @@ public class PersonAgent2 : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(ballPocket.Count);
+        if (isLightLearning)
+        {
+            foreach (var item in fieldManager.PersonInfos)
+            {
+                sensor.AddObservation(item.Agent.personShape.transform.position);
+            }
+        }
+
+        foreach (var item in ballManager.transform.GetComponentsInChildren<Transform>())
+        {
+            if(item == ballManager.transform)
+            {
+                continue;
+            }
+            float[] ballPos = new float[] {item.position.x,item.position.y,item.position.z};
+            bufferSensor.AppendObservation(ballPos);
+        }
     }
 
     public override void OnActionReceived(ActionBuffers actions)
