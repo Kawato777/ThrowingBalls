@@ -504,6 +504,10 @@ PrefabInstance:
       propertyPath: fieldManager
       value: 
       objectReference: {fileID: 8580368710878234266}
+    - target: {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
+      propertyPath: m_ShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5464536777211145309, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1098,6 +1102,10 @@ PrefabInstance:
       propertyPath: fieldManager
       value: 
       objectReference: {fileID: 8580368710878234266}
+    - target: {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
+      propertyPath: m_ShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5464536777211145309, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
       propertyPath: m_RootOrder
       value: -1
