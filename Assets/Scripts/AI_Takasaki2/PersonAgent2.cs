@@ -118,7 +118,7 @@ public class PersonAgent2 : Agent
         }
         else if (actions.DiscreteActions[1] >= 1 && ballPocket.Count >= 1)
         {
-            Pass(actions.DiscreteActions[1]);
+            Pass(actions.DiscreteActions[1] - 1);
         }
 
         // •ñVƒ][ƒ“
