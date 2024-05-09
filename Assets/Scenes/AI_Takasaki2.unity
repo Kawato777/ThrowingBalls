@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,14 +131,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -183,18 +187,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -209,14 +209,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -261,18 +265,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -287,14 +287,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -339,18 +343,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -365,14 +365,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -417,18 +421,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -443,14 +443,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -495,18 +499,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -521,17 +521,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
-    - target: {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
-      propertyPath: m_ShowGizmos
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
@@ -577,18 +577,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
+    - target: {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
+      propertyPath: m_ShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -745,14 +745,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -797,18 +801,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -823,14 +823,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -875,18 +879,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -993,19 +993,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 452424979704459269, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472765581707899460, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8642217784279967537, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+    - target: {fileID: 1879371970970509355, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
-    - target: {fileID: 452424979704459269, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+    - target: {fileID: 5588403310001971618, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1053,30 +1065,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1472765581707899460, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5588403310001971618, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1879371970970509355, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
+    - target: {fileID: 8642217784279967537, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -1123,17 +1123,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
-    - target: {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
-      propertyPath: m_ShowGizmos
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
@@ -1179,18 +1179,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (14)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
+    - target: {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
+      propertyPath: m_ShowGizmos
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -1205,14 +1205,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1257,18 +1261,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -1409,14 +1409,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1461,18 +1465,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -1503,14 +1503,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1555,18 +1559,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []
@@ -1581,14 +1581,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313547808}
     m_Modifications:
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_Name
+      value: Person2Light (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1730386891875332669, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_BehaviorName
       value: TmPlayer3
       objectReference: {fileID: 0}
-    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: fieldManager
-      value: 
-      objectReference: {fileID: 8580368710878234266}
     - target: {fileID: 7252959579092104653, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1633,18 +1637,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_Name
-      value: Person2Light (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 574929884699124326, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
       propertyPath: ballManager
       value: 
       objectReference: {fileID: 476930502918144862}
+    - target: {fileID: 8285439091030888396, guid: a825eecfccff0d7488db4c6ffe2ff011, type: 3}
+      propertyPath: fieldManager
+      value: 
+      objectReference: {fileID: 8580368710878234266}
     m_RemovedComponents:
     - {fileID: 3651413912320338641, guid: 3e2abd4c295cf7f4c9ec052233ceeee0, type: 3}
     m_RemovedGameObjects: []

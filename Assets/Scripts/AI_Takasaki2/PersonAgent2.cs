@@ -5,7 +5,6 @@ using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Policies;
-using Unity.VisualScripting;
 
 public class PersonAgent2 : Agent
 {
@@ -89,7 +88,8 @@ public class PersonAgent2 : Agent
         {
             foreach (var item in fieldManager.PersonInfos)
             {
-                sensor.AddObservation(item.Agent.personShape.transform.position);
+                sensor.AddObservation(item.Agent.personShape.transform.position.x);
+                sensor.AddObservation(item.Agent.personShape.transform.position.z);
             }
         }
 
