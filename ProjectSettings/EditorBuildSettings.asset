@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AI_Takasaki.unity
     guid: 897820fd2a151af499d6525b7fdd7b8b
+  - enabled: 1
+    path: Assets/Scenes/AI_Takasaki2.unity
+    guid: 24258996091ef394f972f394715a15f5
   m_configObjects: {}
