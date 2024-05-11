@@ -106,23 +106,58 @@ public class Person3 : MonoBehaviour
 
     void Pass(int personNum)
     {
-        Person3 person = fieldAgent.PersonInfos[personNum].person;
+        Person3 person = fieldAgent.persons[personNum];
         if (person.ballPocket.Count < 6)
         {
-            foreach (var obj in ballPocket)
+            int ballPocketNum = person.ballPocket.Count;
+            int sendBallsNum = 0;
+            for (int i = 0;i < 6 - ballPocketNum; i++)
             {
-                person.ballPocket.Add(obj);
-                ballPocket.Remove(obj);
-                if (person.ballPocket.Count == 6)
+                if(ballPocket.Count == i)
                 {
-                    return;
+                    break;
                 }
+                person.ballPocket.Add(ballPocket[i]);
+                sendBallsNum++;
+            }
+            for (int i = 0; i < sendBallsNum; i++)
+            {
+                ballPocket.Remove(ballPocket[0]);
             }
         }
     }
 
     void Throw()
     {
+        // 玉投げできるか確認
+        Vector3 velocity = Vector3.zero;
+        Vector3 startPoint = headTF.position;
+        Vector3 goalPoint = fieldAgent.goalTF.position;
+        float height = fieldAgent.transform.position.y + fieldAgent.height;
+        startPoint.y += 0.5f;
+
+        float t1 = CalculateTimeFromStartToMaxHeight(startPoint, height);
+        float t2 = CalculateTimeFromMaxHeightToEnd(goalPoint, height);
+
+        if (t1 <= 0.0f && t2 <= 0.0f)
+        {
+            // その位置に着地させることは不可能のようだ！
+            Debug.LogWarning("!!");
+            return;
+        }
+
+        float time = t1 + t2;
+
+        float speedVec = ComputeVectorFromTime(goalPoint, time, startPoint);
+        float angle = ComputeAngleFromTime(goalPoint, time, startPoint);
+
+        if (speedVec <= 0.0f)
+        {
+            // その位置に着地させることは不可能のようだ！
+            Debug.LogWarning("!!");
+            return;
+        }
+
         throwable = false;
         Debug.Log("Throw");
         // 玉を積む
@@ -173,34 +208,6 @@ public class Person3 : MonoBehaviour
         }
 
         // 玉投げ
-        Vector3 velocity = Vector3.zero;
-        Vector3 startPoint = headTF.position;
-        Vector3 goalPoint = fieldAgent.goalTF.position;
-        float height = fieldAgent.transform.position.y + fieldAgent.height;
-        startPoint.y += 0.5f;
-
-        float t1 = CalculateTimeFromStartToMaxHeight(startPoint, height);
-        float t2 = CalculateTimeFromMaxHeightToEnd(goalPoint, height);
-
-        if (t1 <= 0.0f && t2 <= 0.0f)
-        {
-            // その位置に着地させることは不可能のようだ！
-            Debug.LogWarning("!!");
-            return;
-        }
-
-        float time = t1 + t2;
-
-        float speedVec = ComputeVectorFromTime(goalPoint, time, startPoint);
-        float angle = ComputeAngleFromTime(goalPoint, time, startPoint);
-
-        if (speedVec <= 0.0f)
-        {
-            // その位置に着地させることは不可能のようだ！
-            Debug.LogWarning("!!");
-            return;
-        }
-
         Vector3 vec = ConvertVectorToVector3(speedVec, angle, goalPoint, startPoint);
 
         foreach (var item in ballPocket)

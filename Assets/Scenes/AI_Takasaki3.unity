@@ -2125,7 +2125,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 30000
+  MaxStep: 10000
   PersonInfos:
   - person: {fileID: 4868544165085012280}
     StartingPos: {x: 0, y: 0, z: 0}
@@ -2172,6 +2172,7 @@ MonoBehaviour:
   - person: {fileID: 1873893503}
     StartingPos: {x: 0, y: 0, z: 0}
     Rb: {fileID: 0}
+  persons: []
   ballManager: {fileID: 3045953151089006841}
   playAreaDiameter: 7
   personTall: 1.7

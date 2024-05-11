@@ -18,7 +18,8 @@ public class FieldAgent : Agent
     }
 
     public List<PlayerInfo> PersonInfos;
-    List<Person3> persons = new List<Person3>();
+    [HideInInspector]
+    public List<Person3> persons = new List<Person3>();
 
     private int m_ResetTimer;
 
@@ -94,9 +95,9 @@ public class FieldAgent : Agent
     public override void OnActionReceived(ActionBuffers actions)
     {
         int n = 0;
-        foreach(var info in PersonInfos)
+        foreach(var info in persons)
         {
-            info.person.Action(new Vector2(actions.ContinuousActions[2 * n],
+            info.Action(new Vector2(actions.ContinuousActions[2 * n],
                                 actions.ContinuousActions[2 * n + 1]),
                                 actions.DiscreteActions[n],
                                 actions.DiscreteActions[n + 15]);
