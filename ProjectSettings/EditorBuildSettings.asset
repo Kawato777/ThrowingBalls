@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AI_Takasaki.unity
     guid: 897820fd2a151af499d6525b7fdd7b8b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AI_Takasaki2.unity
     guid: 24258996091ef394f972f394715a15f5
+  - enabled: 1
+    path: Assets/Scenes/AI_Takasaki3.unity
+    guid: 08399e5ba682f494c8595bce0d080a10
   m_configObjects: {}
