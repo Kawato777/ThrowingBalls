@@ -17,21 +17,17 @@ public class FieldAgent : Agent
         public Rigidbody Rb;
     }
 
-    [Tooltip("Max Environment Steps")] public int MaxEnvironmentSteps = 30000;
-
     public List<PlayerInfo> PersonInfos;
     List<Person3> persons = new List<Person3>();
 
     private int m_ResetTimer;
 
-    public BallManager2 ballManager;
+    public BallManager3 ballManager;
 
     public float playAreaDiameter, personTall, maxBallsNum;
     public float gosa = 0.5f;
     public Transform goalTF;
     public float height;
-    [SerializeField]
-    bool isHeuristic = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,11 +55,11 @@ public class FieldAgent : Agent
     private void FixedUpdate()
     {
         m_ResetTimer++;
-        if (m_ResetTimer >= MaxEnvironmentSteps && MaxEnvironmentSteps > 0)
+        if (m_ResetTimer >= MaxStep && MaxStep > 0)
         {
             EndEpisodeFromOthers();
         }
-        AddReward(-1 / MaxEnvironmentSteps);
+        AddReward(-1 / MaxStep);
     }
 
     public void EndEpisodeFromOthers()
@@ -132,20 +128,30 @@ public class FieldAgent : Agent
     {
         var banana0 = actionsOut.ContinuousActions;
         var banana1 = actionsOut.DiscreteActions;
-        int n = 0;
-        foreach(var info in PersonInfos)
+        //int n = 0;
+        //foreach(var info in PersonInfos)
+        //{
+          //  banana0[2 * n] = Input.GetAxis("Horizontal");
+            //banana0[2 * n + 1] = Input.GetAxis("Vertical");
+            //if (Input.GetKeyDown(KeyCode.Space) && info.person.throwable)
+            //{
+              //  banana1[0] = 1;
+            //}
+            //else
+            //{
+             //   banana1[0] = 0;
+            //}
+            //n++;
+        //}
+        banana0[0] = Input.GetAxis("Horizontal");
+        banana0[1] = Input.GetAxis("Vertical");
+        if (Input.GetKeyDown(KeyCode.Space) && persons[0].throwable)
         {
-            banana0[2 * n] = Input.GetAxis("Horizontal");
-            banana0[2 * n + 1] = Input.GetAxis("Vertical");
-            if (Input.GetKeyDown(KeyCode.Space) && info.person.throwable)
-            {
-                banana1[0] = 1;
-            }
-            else
-            {
-                banana1[0] = 0;
-            }
-            n++;
+            banana1[0] = 1;
+        }
+        else
+        {
+            banana1[0] = 0;
         }
     }
 

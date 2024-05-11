@@ -6,8 +6,11 @@ using Unity.MLAgents;
 public class Person3 : MonoBehaviour
 {
     public GameObject personShape;
+    [HideInInspector]
     public List<GameObject> ballPocket = new List<GameObject>();
+    [HideInInspector]
     public List<Person3> passablePersons = new List<Person3>();
+    [HideInInspector]
     public bool throwable = false;
     public Rigidbody personShape_rb;
     [SerializeField]
@@ -15,7 +18,7 @@ public class Person3 : MonoBehaviour
     [SerializeField]
     Transform headTF;
     [SerializeField]
-    BallManager2 ballManager;
+    BallManager3 ballManager;
 
     private void Start()
     {
@@ -48,6 +51,11 @@ public class Person3 : MonoBehaviour
 
     public void SetPassablePerson(Person3 person, bool isRemoved)
     {
+        if(person == this)
+        {
+            return;
+        }
+
         if (isRemoved) // îÕàÕÇ©ÇÁèoÇÈ
         {
             passablePersons.Remove(person);
