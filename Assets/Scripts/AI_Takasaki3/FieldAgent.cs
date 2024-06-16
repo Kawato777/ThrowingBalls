@@ -164,6 +164,6 @@ public class FieldAgent : Agent
 
     public void Goal()
     {
-        AddReward(0.05f);
+        AddReward(0.1f);
     }
 }

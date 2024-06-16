@@ -34,7 +34,7 @@ public class Person3 : MonoBehaviour
 
         ballPocket.Add(ball);
 
-        fieldAgent.AddReward(0.1f);   // ボールをゲットしたら+0.1
+        fieldAgent.AddReward(0.01f);   // ボールをゲットしたら+0.01
 
         if (ballPocket.Count == 6)
         {
