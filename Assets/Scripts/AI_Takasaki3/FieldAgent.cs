@@ -90,6 +90,12 @@ public class FieldAgent : Agent
         {
             sensor.AddObservation(info.person.ballPocket.Count);
         }
+
+        foreach (var info in PersonInfos)
+        {
+            sensor.AddObservation(info.person.personShape_rb.velocity.x); 
+            sensor.AddObservation(info.person.personShape_rb.velocity.z);
+        }
     }
 
     public override void OnActionReceived(ActionBuffers actions)

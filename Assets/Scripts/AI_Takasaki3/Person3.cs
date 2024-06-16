@@ -34,7 +34,7 @@ public class Person3 : MonoBehaviour
 
         ballPocket.Add(ball);
 
-        fieldAgent.AddReward(0.01f);   // ボールをゲットしたら+0.01
+        fieldAgent.AddReward(0.1f);   // ボールをゲットしたら+0.1
 
         if (ballPocket.Count == 6)
         {
@@ -85,7 +85,7 @@ public class Person3 : MonoBehaviour
         Vector3 controlSignal = Vector3.zero;
         controlSignal.x = ContinuousActions.x;
         controlSignal.z = ContinuousActions.y;
-        personShape_rb.AddForce(controlSignal * 10);
+        personShape_rb.AddForce(controlSignal * 15);
 
         if (throwState == 1)
         {
