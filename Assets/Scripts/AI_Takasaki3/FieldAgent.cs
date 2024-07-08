@@ -30,6 +30,8 @@ public class FieldAgent : Agent
     public Transform goalTF;
     public float height;
 
+    public bool isRequiredSixBalls;
+
     // Start is called before the first frame update
     void Start()
     {

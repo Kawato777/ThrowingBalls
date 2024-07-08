@@ -36,9 +36,17 @@ public class Person3 : MonoBehaviour
 
         fieldAgent.AddReward(0.01f);   // ボールをゲットしたら+0.01
 
-        if (ballPocket.Count == 6)
+        if (fieldAgent.isRequiredSixBalls)
         {
+            Debug.Log("A");
             throwable = true;
+        }
+        else
+        {
+            if (ballPocket.Count == 6)
+            {
+                throwable = true;
+            }
         }
 
         Rigidbody rb = ball.GetComponent<Rigidbody>();
