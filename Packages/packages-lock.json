@@ -76,7 +76,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "file:D:/ARUTO/Unity/ml-agents-release_19/com.unity.ml-agents",
+      "version": "file:C:/Users/wassy/Documents/Unity/ml-agents-release_19/com.unity.ml-agents",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -86,7 +86,7 @@
       }
     },
     "com.unity.recorder": {
-      "version": "4.0.1",
+      "version": "4.0.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
