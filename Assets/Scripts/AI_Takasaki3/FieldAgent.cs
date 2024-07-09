@@ -60,6 +60,7 @@ public class FieldAgent : Agent
     private void FixedUpdate()
     {
         m_ResetTimer++;
+        Debug.Log(m_ResetTimer);
         if (m_ResetTimer >= MaxStep && MaxStep > 0)
         {
             EndEpisodeFromOthers();
@@ -171,6 +172,12 @@ public class FieldAgent : Agent
     public void Goal()
     {
         goalBallsCount++;
+        if(goalBallsCount >= maxBallsNum)
+        {
+            AddReward(30f);
+            EndEpisodeFromOthers();
+            return;
+        }
         AddReward(0.1f);
     }
 }
