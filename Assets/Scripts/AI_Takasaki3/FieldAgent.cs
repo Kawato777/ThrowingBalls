@@ -32,6 +32,8 @@ public class FieldAgent : Agent
 
     public bool isRequiredSixBalls;
 
+    int goalBallsCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +69,7 @@ public class FieldAgent : Agent
 
     public void EndEpisodeFromOthers()
     {
+        Debug.Log($"EpisodeLength : {m_ResetTimer} & GoalBallsCount : {goalBallsCount}");
         ResetScene();
         EndEpisode();
     }
@@ -74,6 +77,7 @@ public class FieldAgent : Agent
     void ResetScene()
     {
         m_ResetTimer = 0;
+        goalBallsCount = 0;
 
         foreach (PlayerInfo info in PersonInfos)
         {
@@ -166,6 +170,7 @@ public class FieldAgent : Agent
 
     public void Goal()
     {
+        goalBallsCount++;
         AddReward(0.1f);
     }
 }

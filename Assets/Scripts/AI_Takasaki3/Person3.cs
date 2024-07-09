@@ -36,9 +36,8 @@ public class Person3 : MonoBehaviour
 
         fieldAgent.AddReward(0.01f);   // ボールをゲットしたら+0.01
 
-        if (fieldAgent.isRequiredSixBalls)
+        if (fieldAgent.isRequiredSixBalls == false)
         {
-            Debug.Log("A");
             throwable = true;
         }
         else

@@ -247,7 +247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3122334597209900502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0475, y: 4.196, z: -0.0059}
+  m_LocalPosition: {x: -0.0475, y: 4.097, z: -0.0059}
   m_LocalScale: {x: 0.24992096, y: 0.1, z: 0.22728384}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -273,7 +273,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.1, y: 1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &813000061178057265
 MonoBehaviour:
@@ -432,7 +432,7 @@ Transform:
   - {fileID: 4904695677372374254}
   - {fileID: 6231644406412448845}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3485086393553407206
 MonoBehaviour:
@@ -504,6 +504,7 @@ MonoBehaviour:
   gosa: 0.1
   goalTF: {fileID: 1094898040910000831}
   height: 4.5
+  isRequiredSixBalls: 0
 --- !u!114 &5616791393111135199
 MonoBehaviour:
   m_ObjectHideFlags: 0
