@@ -165,9 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!4 &463558657
 Transform:
   m_ObjectHideFlags: 0
@@ -831,11 +828,11 @@ MonoBehaviour:
   isPlaying: 0
   throwBallsCount: 100
   throwTimes: 3
-  shootAngle: 70
+  shootAngle: 75
   distance: 1
   personTall: 1.6
   person: {fileID: 5274762731400206250}
-  GosaNum: 0.1
+  GosaNum: 0
   isAirResistant: 0
 --- !u!4 &1576172382384127311
 Transform:

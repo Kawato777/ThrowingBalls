@@ -106,7 +106,7 @@ public class Person3 : MonoBehaviour
         // •ñVƒ][ƒ“
         if (personShape.transform.position.y < fieldAgent.transform.position.y - 5)
         {
-            fieldAgent.AddReward(-1.0f);
+            fieldAgent.AddReward(-50.0f);
             fieldAgent.EndEpisodeFromOthers();
         }
     }

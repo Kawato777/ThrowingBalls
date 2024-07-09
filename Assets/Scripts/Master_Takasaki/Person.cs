@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Person : MonoBehaviour
 {
-    [SerializeField]
-    Transform headTF, targetTF, bodyTF;
+    public Transform headTF, targetTF, bodyTF;
     int shootBallsNum;
 
     Vector3 shootPos;
@@ -31,7 +30,8 @@ public class Person : MonoBehaviour
         headTF.tag = "Untagged";
         for (int i = 0; i < shootBallsNum; i++)
         {
-            BallController.Instance._Throw(shootAngle, shootPos, isAirResistant);
+            //  BallController.Instance._Throw(shootAngle, shootPos, isAirResistant);
+            BallController.Instance.Throw(shootPos);
             yield return new WaitForFixedUpdate();
         }
         bodyTF.tag = "Ground";
